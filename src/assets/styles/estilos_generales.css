@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{   
+    --fuente_regular:400;
+    --fuente_semibold:600;
+    --fuente_extrabold:800;
+    --fuente_black:900;
+
+    --fuente_tamanio_titulo_1:34px;
+    --fuente_tamanio_titulo_2:28px;
+    --fuente_tamanio_titulo_3:22px;
+    --fuente_tamanio_titulo_4:18px;
+    --fuente_tamanio_titulo_5:15px;
+    --fuente_tamanio_titulo_6:12px;
+
+    --color_azul_1:#072737;
+    --color_azul_0:#0B3B53;
+    --color_azul_-1:#1675A5;
+    --color_azul_-2:#33A9E4;
+
+    --color_verde_1:#073829;
+    --color_verde_0:#0B543D;
+    --color_verde_-1:#16A678;
+    --color_verde_-2:#33E4AC;
+
+    --color_negro:#1A1A1E;
+    --color_gris_1:#60606F;
+    --color_gris_0:#AEAEB9;
+    --color_gris_-1:#E4E4E8;
+    --color_blanco:#F3F3F5;
+}
+
+    
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--fuente_tamanio_titulo_5);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body, html { /*Solo se puso por el slider de productos que era por un hover de trasnfoprm que lo desaparecia*/
+    overflow-x: hidden;
+}
