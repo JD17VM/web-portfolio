@@ -40,6 +40,6 @@ html{
     box-sizing: border-box;
 }
 
-body, html { /*Solo se puso por el slider de productos que era por un hover de trasnfoprm que lo desaparecia*/
-    overflow-x: hidden;
+body{
+    background-color: blue;
 }
