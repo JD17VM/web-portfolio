@@ -34,6 +34,7 @@
 html{
     font-family: 'Roboto', sans-serif;
     font-size: var(--fuente_tamanio_titulo_5);
+    font-weight: var(--fuente_regular);
 }
 
 *{
