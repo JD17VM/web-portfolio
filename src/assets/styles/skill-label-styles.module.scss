@@ -1,0 +1,15 @@
+.skill-label{
+    background-color: orange;
+    padding: 2px 0.8rem;
+    border-radius: 1rem;
+    font-size: var(--fuente_tamanio_titulo_5);
+    font-weight: var(--fuente_semibold);
+}
+
+.skill-label-container{
+    display: flex;
+    column-gap: 0.5rem;
+    row-gap: 5px;
+    background-color: yellow;
+    flex-wrap: wrap;
+}

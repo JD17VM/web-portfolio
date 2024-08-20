@@ -3,6 +3,8 @@ import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 
+import JobCard from './widgets/JobCard'
+
 function App() {
 
   return (
@@ -51,9 +53,9 @@ function App() {
       </div>
       
       <div className={styles['container-experience']}>
-        <div className={styles['job-card']}>
-
-        </div>
+        <JobCard/>
+        <JobCard/>
+        <JobCard/>
       </div>
 
       <div className={styles['container-projects']}>
