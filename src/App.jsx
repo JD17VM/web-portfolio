@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 
-import JobCard from './widgets/JobCard'
+import { JobCard, ProjectCard } from './widgets/JobCard'
 
 function App() {
 
@@ -59,8 +59,8 @@ function App() {
       </div>
 
       <div className={styles['container-projects']}>
-        <div className={styles['project-card']}>
-        </div>
+        <ProjectCard/>
+        <ProjectCard/>
       </div>
     </div>
   )

@@ -123,12 +123,20 @@
     row-gap: 1.2rem;
 }
 
+.container-projects{
+    grid-area:container-projects;
+    width: 100%;
+    display: flex;
+    column-gap: 1.5rem;
+    row-gap: 1.2rem;
+}
+
 
 
 @media only screen and (max-width: 979px) { /* Pantallas medianas 980*/
     .container-total {
         max-width: 890px;
-        column-gap: 80px;
+        column-gap: 60px;
     }
 }
 
@@ -144,6 +152,10 @@
 
     .container-scroll-info-block{
         width: 100%;
+    }
+
+    .container-projects{
+        flex-direction: column;
     }
 }
 

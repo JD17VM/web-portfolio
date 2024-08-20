@@ -43,3 +43,72 @@
 @media only screen and (max-width: 379px) { /* Pantallas muy pequeñas 380*/
 
 }
+
+
+.element-card{
+    background-color: red;
+    font-size: var(--fuente_tamanio_titulo_4);
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    column-gap: 0.8rem; 
+    row-gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 10px;
+    grid-template-areas:
+    "cont_img date_to_date"
+    "cont_img cont_info"
+    "skill_label skill_label"
+    ;
+
+    > p{
+        grid-area: date_to_date;
+        font-size: var(--fuente_tamanio_titulo_5);
+        //flex-shrink: 0;
+        
+    }
+
+    > div.cont-img{
+        grid-area: cont_img;
+        background-color: black;
+        width: 130px;
+        aspect-ratio: 1/1;
+    }
+
+    > div.cont-info{
+        grid-area: cont_info;
+        width: auto;
+        //flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        > h3{
+            font-weight: var(--fuente_extrabold);
+        }
+    }
+
+    > div:last-child{
+        grid-area: skill_label;
+    }
+
+}
+
+
+@media only screen and (max-width: 979px) { /* Pantallas medianas 980*/
+    .element-card{
+        //flex-direction: column;
+        grid-template-areas:
+        "cont_img date_to_date"
+        "cont_img cont_info"
+        "skill_label skill_label"
+        ;
+    }
+}
+
+@media only screen and (max-width: 679px) { /* Pantallas pequeñas 680*/
+}
+
+@media only screen and (max-width: 379px) { /* Pantallas muy pequeñas 380*/
+
+}
