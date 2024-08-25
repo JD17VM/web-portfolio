@@ -168,7 +168,9 @@ $padding_top_info_block_container_text_title: 15px;
     }
 
     .container-projects{
-        grid-template-columns: 1fr;
+        > div{
+            grid-template-columns: 1fr;
+        }
     }
 }
 
