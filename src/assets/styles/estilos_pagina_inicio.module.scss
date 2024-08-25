@@ -1,8 +1,10 @@
+$padding_top_info_block_container_text_title: 15px;
+
 .container-total {
     background-color: green;
     width: 100%;
     max-width: 1040px; /* Estilo para pantallas grandes (por defecto) */
-    margin: 80px auto;
+    margin:  (80px - $padding_top_info_block_container_text_title) auto 80px auto;
     padding:0 1rem;
     display:grid;
     grid-template-areas:
@@ -26,9 +28,14 @@
     width: 320px;
 
     > .info-block{
+        padding-top: $padding_top_info_block_container_text_title;
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
+        position: -webkit-sticky;
+        position: sticky;
+        top: -1px;
+
         > h1{
             font-size: var(--fuente_tamanio_titulo_1);
             font-weight: var(--fuente_black);
@@ -104,6 +111,7 @@
 }
 
 .container-text-title{
+    padding-top: $padding_top_info_block_container_text_title;
     grid-area: container-text-title;
     display: flex;
     flex-direction: column;

@@ -55,7 +55,7 @@ function App() {
       <div className={styles['container-experience']}>
         <h2>EXPERIENCE</h2>
         <div>
-          <JobCard skills={["Javascript", "Node.js", "Python", "Java", "C++", "Laravel", "PHP"]}/>
+          <JobCard/>
           <JobCard/>
           <JobCard/>
         </div>
@@ -64,7 +64,7 @@ function App() {
       <div className={styles['container-projects']}>
         <h2>PROJECTS</h2>
         <div>
-          <ProjectCard skills={["Javascript", "Node.js", "Python", "Java", "C++"]}/>
+          <ProjectCard/>
           <ProjectCard/>
           <ProjectCard/>
           <ProjectCard/>
