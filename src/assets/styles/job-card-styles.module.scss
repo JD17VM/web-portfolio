@@ -1,7 +1,6 @@
-.job-card{
+.job-card, .project-card{
     background-color: red;
     font-size: var(--fuente_tamanio_titulo_4);
-    display: flex;
     width: 100%;
     box-sizing: border-box;
     column-gap: 0.8rem; 
@@ -11,13 +10,10 @@
 
     > p{
         font-size: var(--fuente_tamanio_titulo_5);
-        flex-shrink: 0;
-        
     }
 
-    > div{
+    > div.cont-info{
         width: auto;
-        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
@@ -26,35 +22,21 @@
             font-weight: var(--fuente_extrabold);
         }
     }
-
 }
 
+.job-card{  
+    display: flex;    
+    > p{
+        flex-shrink: 0;
+    }
 
-@media only screen and (max-width: 979px) { /* Pantallas medianas 980*/
-    .job-card{
-        flex-direction: column;
+    > div.cont-info{
+        flex: 1 1 auto;
     }
 }
 
-@media only screen and (max-width: 679px) { /* Pantallas pequeñas 680*/
-
-}
-
-@media only screen and (max-width: 379px) { /* Pantallas muy pequeñas 380*/
-
-}
-
-
-.element-card{
-    background-color: red;
-    font-size: var(--fuente_tamanio_titulo_4);
+.project-card{
     display: grid;
-    width: 100%;
-    box-sizing: border-box;
-    column-gap: 0.8rem; 
-    row-gap: 0.8rem;
-    padding: 1rem;
-    border-radius: 10px;
     grid-template-areas:
     "cont_img date_to_date"
     "cont_img cont_info"
@@ -63,9 +45,6 @@
 
     > p{
         grid-area: date_to_date;
-        font-size: var(--fuente_tamanio_titulo_5);
-        //flex-shrink: 0;
-        
     }
 
     > div.cont-img{
@@ -77,15 +56,6 @@
 
     > div.cont-info{
         grid-area: cont_info;
-        width: auto;
-        //flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.5rem;
-
-        > h3{
-            font-weight: var(--fuente_extrabold);
-        }
     }
 
     > div:last-child{
@@ -96,13 +66,16 @@
 
 
 @media only screen and (max-width: 979px) { /* Pantallas medianas 980*/
-    .element-card{
-        //flex-direction: column;
+    .project-card{
         grid-template-areas:
         "cont_img date_to_date"
         "cont_img cont_info"
         "skill_label skill_label"
         ;
+    }
+
+    .job-card{
+        flex-direction: column;
     }
 }
 
@@ -110,5 +83,4 @@
 }
 
 @media only screen and (max-width: 379px) { /* Pantallas muy pequeñas 380*/
-
 }

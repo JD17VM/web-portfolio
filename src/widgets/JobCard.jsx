@@ -4,7 +4,6 @@ import SkillLabelContainer from './SkillLabelContainer';
 export const JobCard = () => {
     return(
         <div className={styles['job-card']}>
-            
             <p>2024 - PRESENT</p>
             <div className={styles['cont-info']}>
                 <h3>Senior Frontend Engineer, Accessibility . Klavijo</h3>
@@ -18,7 +17,7 @@ export const JobCard = () => {
 
 export const ProjectCard = () => {
     return(
-        <div className={styles['element-card']}>
+        <div className={styles['project-card']}>
             <div className={styles['cont-img']}>
 
             </div>
