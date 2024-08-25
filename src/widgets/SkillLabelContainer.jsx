@@ -8,19 +8,12 @@ const SkillLabel = ({children}) => {
     )
 }
 
-const SkillLabelContainer = () => {
+const SkillLabelContainer = ({ skills = [] }) => {
     return(
         <div className={styles['skill-label-container']}>
-            <SkillLabel>CSS</SkillLabel>
-            <SkillLabel>JavaScript</SkillLabel>
-            <SkillLabel>HTML</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
-            <SkillLabel>Node.js</SkillLabel>
+            {skills.map((skill, index) => (
+                <SkillLabel key={index}>{skill}</SkillLabel>
+            ))}
         </div>
     )
 }
