@@ -61,6 +61,9 @@ function App() {
       <div className={styles['container-projects']}>
         <ProjectCard/>
         <ProjectCard/>
+        <ProjectCard/>
+        <ProjectCard/>
+        <ProjectCard/>
       </div>
     </div>
   )

@@ -126,9 +126,10 @@
 .container-projects{
     grid-area:container-projects;
     width: 100%;
-    display: flex;
+    display: grid;
     column-gap: 1.5rem;
     row-gap: 1.2rem;
+    grid-template-columns: 1fr 1fr;
 }
 
 
@@ -155,7 +156,7 @@
     }
 
     .container-projects{
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 }
 
