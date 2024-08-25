@@ -12,6 +12,12 @@
 
     column-gap: 120px;
     row-gap: 2rem;
+
+    h2{
+        font-size: var(--fuente_tamanio_titulo_3);
+        font-weight: var(--fuente_semibold);
+        margin-bottom: 1rem;
+    }
 }
 
 .container-scroll-info-block{
@@ -77,7 +83,6 @@
 
             > h2{
                 margin-bottom: 0.8rem;
-                font-weight: var(--fuente_semibold);
             }
             
             > ul{
@@ -104,12 +109,6 @@
     flex-direction: column;
     row-gap: 2rem;
     > div{
-        > h2{
-            font-size: var(--fuente_tamanio_titulo_3);
-            font-weight: var(--fuente_semibold);
-            margin-bottom: 0.5rem;
-        }
-
         > p{
             font-size: var(--fuente_tamanio_titulo_4);
             line-height: 1.4;
@@ -118,18 +117,23 @@
 }
 
 .container-experience{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.2rem;
+    > div{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
 }
 
 .container-projects{
     grid-area:container-projects;
-    width: 100%;
-    display: grid;
-    column-gap: 1.5rem;
-    row-gap: 1.2rem;
-    grid-template-columns: 1fr 1fr;
+    
+    > div{
+        width: 100%;
+        display: grid;
+        column-gap: 1.5rem;
+        row-gap: 1.2rem;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 

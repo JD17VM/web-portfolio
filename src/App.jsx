@@ -53,17 +53,23 @@ function App() {
       </div>
       
       <div className={styles['container-experience']}>
-        <JobCard/>
-        <JobCard/>
-        <JobCard/>
+        <h2>EXPERIENCE</h2>
+        <div>
+          <JobCard skills={["Javascript", "Node.js", "Python", "Java", "C++", "Laravel", "PHP"]}/>
+          <JobCard/>
+          <JobCard/>
+        </div>
       </div>
 
       <div className={styles['container-projects']}>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
+        <h2>PROJECTS</h2>
+        <div>
+          <ProjectCard skills={["Javascript", "Node.js", "Python", "Java", "C++"]}/>
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
+        </div>
       </div>
     </div>
   )
