@@ -58,14 +58,22 @@ $padding_top_info_block_container_text_title: 15px;
                 justify-content: center;
                 row-gap: 1rem;
 
-                > li::before{
-                    content: "";
-                    background-color: red;
-                    width: 30px;
-                    height: 4px;
-                    display: inline-block;
-                    margin-right: 0.5rem;
-                    vertical-align: middle;
+                > li{
+                    > a{
+                        &::before{
+                            content: "";
+                            background-color: red;
+                            width: 30px;
+                            height: 4px;
+                            display: inline-block;
+                            margin-right: 0.5rem;
+                            vertical-align: middle;
+                        }
+
+                        &.active::before{
+                            width: 50px;
+                        }
+                    }
                 }
             }
         }
