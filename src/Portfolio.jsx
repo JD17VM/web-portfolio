@@ -85,6 +85,7 @@ const Portfolio = () => {
     };
 
     return (
+        <div className='body'>
         <div className={styles['container-total']}>
         <div className={styles['container-scroll-info-block']}>
             <div className={styles['info-block']}>
@@ -190,6 +191,7 @@ const Portfolio = () => {
                 />
             ))}
             </div>
+        </div>
         </div>
         </div>
     );
