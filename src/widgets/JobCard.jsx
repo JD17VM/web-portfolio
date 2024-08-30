@@ -13,7 +13,15 @@ export const JobCard = ({
             <p>{dateToDate}</p>
             <div className={styles['cont-info']}>
                 <h3>{roleCompany}</h3>
-                <p>{description}</p>
+                {Array.isArray(description) ? (
+                    <ul>
+                        {description.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>{description}</p>
+                )}
                 <SkillLabelContainer skills={skills}/>
             </div>
         </div>

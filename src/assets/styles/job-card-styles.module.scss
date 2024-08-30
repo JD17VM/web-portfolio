@@ -1,6 +1,6 @@
 .job-card, .project-card{
-    background-color: red;
-    font-size: var(--fuente_tamanio_titulo_4);
+    background-color: rgba(0, 0, 0, 0.103);
+    font-size: var(--fuente_tamanio_titulo_5);
     width: 100%;
     box-sizing: border-box;
     column-gap: 0.8rem; 
@@ -10,16 +10,28 @@
 
     > p{
         font-size: var(--fuente_tamanio_titulo_5);
+        color: var(--color_gris_0);
     }
 
     > div.cont-info{
         width: auto;
         display: flex;
         flex-direction: column;
-        row-gap: 0.5rem;
+        row-gap: 0.2rem;
+        line-height: 1.3rem;
 
         > h3{
             font-weight: var(--fuente_extrabold);
+        }
+
+        > p{
+            margin-bottom: 0.5rem;
+        }
+
+        > ul{
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5rem;
         }
     }
 }
@@ -32,6 +44,7 @@
 
     > div.cont-info{
         flex: 1 1 auto;
+        row-gap: 0.5rem;
     }
 }
 

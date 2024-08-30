@@ -42,5 +42,7 @@ html{
 }
 
 body{
-    background-color: blue;
+    background: rgb(9,31,42);
+    background: radial-gradient(circle, rgba(9,31,42,1) 0%, rgba(11,59,83,1) 98%);
+    color: var(--color_blanco);
 }

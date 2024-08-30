@@ -4,6 +4,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { JobCard, ProjectCard } from './widgets/JobCard';
 
+import pageData from "./data/data"
+
 function App() {
   const [activeSection, setActiveSection] = useState('section1');
 
@@ -151,32 +153,42 @@ function App() {
       <div className={styles['container-text-title']}>
         <div className={styles['text-title']} ref={section1Ref} id="section1">
           <h2>ABOUT</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid beatae hic excepturi eos illo ex ut vero ipsam ad? Obcaecati et doloribus, incidunt distinctio facilis atque velit. In eligendi corporis asperiores rerum aperiam? Exercitationem ipsa similique dolores accusamus. Nemo dolor, quisquam vero laboriosam ex in cupiditate et amet eligendi autem, ipsa hic suscipit, tempore mollitia debitis nisi at! Corporis quam hic fuga, at voluptas cum dolorum assumenda blanditiis consequuntur? Velit molestiae saepe, labore illo minima facere aliquam doloremque. Culpa, itaque?</p>
+          <p>{pageData.about}</p>
         </div>
 
         <div className={styles['text-title']} ref={section2Ref} id="section2">
           <h2>INTERESTS</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid beatae hic excepturi eos illo ex ut vero ipsam ad? Obcaecati et doloribus, incidunt distinctio facilis atque velit. In eligendi corporis asperiores rerum aperiam? Exercitationem ipsa similique dolores accusamus. Nemo dolor, quisquam vero laboriosam ex in cupiditate et amet eligendi autem, ipsa hic suscipit, tempore mollitia debitis nisi at! Corporis quam hic fuga, at voluptas cum dolorum assumenda blanditiis consequuntur? Velit molestiae saepe, labore illo minima facere aliquam doloremque. Culpa, itaque?</p>
+          <p>{pageData.interests}</p>
         </div>
       </div>
 
       <div className={styles['container-experience']} ref={section3Ref} id="section3">
         <h2>EXPERIENCE</h2>
         <div>
-          <JobCard/>
-          <JobCard/>
-          <JobCard/>
+          {pageData.experience.map((job, index) => (
+            <JobCard 
+              key = {index} 
+              dateToDate = {job.dateToDate} 
+              roleCompany = {job.roleCompany} 
+              description = {job.description} 
+              skills ={job.skills} 
+            />
+          ))}
         </div>
       </div>
 
       <div className={styles['container-projects']} ref={section4Ref} id="section4">
         <h2>PROJECTS</h2>
         <div>
-          <ProjectCard/>
-          <ProjectCard/>
-          <ProjectCard/>
-          <ProjectCard/>
-          <ProjectCard/>
+          {pageData.projects.map((project, index) => (
+            <ProjectCard
+              key = {index}
+              img = {project.img}
+              date = {project.date}
+              description = {project.description}
+              skills = {project.skills}
+            />
+          ))}
         </div>
       </div>
     </div>
