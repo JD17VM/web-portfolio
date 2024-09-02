@@ -154,7 +154,7 @@ const Portfolio = () => {
         <div className={styles['container-text-title']}>
             <div className={styles['text-title']} ref={section1Ref} id="section1">
             <h2>ABOUT</h2>
-            <p>{pageData.about}</p>
+            <p dangerouslySetInnerHTML={{ __html: pageData.about }}></p>
             </div>
 
             <div className={styles['text-title']} ref={section2Ref} id="section2">
@@ -169,7 +169,8 @@ const Portfolio = () => {
             {pageData.experience.map((job, index) => (
                 <JobCard 
                 key = {index} 
-                dateToDate = {job.dateToDate} 
+                startDate = {job.startDate} 
+                endDate = {job.endDate} 
                 roleCompany = {job.roleCompany} 
                 description = {job.description} 
                 skills ={job.skills} 

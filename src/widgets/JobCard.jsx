@@ -3,20 +3,21 @@ import SkillLabelContainer from './SkillLabelContainer';
 import imageHelper from '../utils/imageHelper';
 
 export const JobCard = ({ 
-    dateToDate = "YEAR-Month to YEAR-Month", 
+    startDate = "", 
+    endDate = "", 
     roleCompany = "The asignated role . Company Name", 
     description = "In the space provided below, please provide a comprehensive account of all the functions and responsibilities you undertook during your tenure at the company.", 
     skills = ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8"] 
 }) => {
     return(
         <div className={styles['job-card']}>
-            <p>{dateToDate}</p>
+            <p>{startDate} to {endDate}</p>
             <div className={styles['cont-info']}>
                 <h3>{roleCompany}</h3>
                 {Array.isArray(description) ? (
                     <ul>
                         {description.map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index}>- {item}</li>
                         ))}
                     </ul>
                 ) : (

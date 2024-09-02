@@ -4,6 +4,8 @@ import './assets/styles/estilos_pagina_cv.scss';
 
 import imageHelper from './utils/imageHelper';
 
+import pageData from "./data/data"
+
 const Dato = ({image, children}) => {
     return (
         <div className='dato'>
@@ -46,7 +48,7 @@ const Cabecera = ({children, derecha_superior,derecha_inferior}) => {
 const Experiencia = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramientas}) => {
     return(
         <div className='experiencia'>
-            <Cabecera derecha_superior={<><p>{fecha_inicio}</p><p>{fecha_fin}</p></>}  derecha_inferior={pais}>
+            <Cabecera derecha_superior={<><p>{fecha_inicio}</p><p> to {fecha_fin}</p></>}  derecha_inferior={pais}>
                 <h3>{titulo}</h3>
             </Cabecera>
             <div className="descripcion">
@@ -62,7 +64,7 @@ const Experiencia = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramient
             </div>
             
             <div className="herramientas">
-                <p>Herramientas:</p>
+                <p>{pageData.title.tools}:</p>
                 <p>{herramientas}</p>
             </div>
         </div>
@@ -82,49 +84,33 @@ const CV = () => {
                     <Dato image={imageHelper.email_icon}>jdiegodiego4@gmail.com</Dato>
                 </div>
                 <Seccion_Izquierda 
-                titulo='SOBRE MÍ'
-                contenido='Desde muy joven, la programación ha sido mi pasión. He tenido la oportunidad de sumergirme en el desarrollo de software y enseñar programación. Me especializo tanto en el desarrollo web backend como frontend, trabajando con una variedad de tecnologías y adaptándome rápidamente a nuevas herramientas.
-                <br/><br/>
-                Mi versatilidad me permite resolver desafíos complejos y entregar soluciones de alta calidad. Me impulsa la constante evolución del mundo de la tecnología, siempre ansioso por aprender e implementar innovaciones. Ya sea colaborando con equipos o trabajando de forma independiente, mi objetivo es crecer tanto técnica como profesionalmente, a la vez que contribuyo a proyectos significativos.'
+                titulo='ABOUT'
+                contenido={pageData.about}
                 />
 
                 <Seccion_Izquierda 
-                titulo='INTERESES'
-                contenido='Busco unirme a una empresa que me desafíe con nuevas oportunidades, ya que tengo la capacidad de abordarlas eficazmente.  Estoy comprometido con el aprendizaje y el desarrollo continuo, asegurando así que me mantenga adaptable en un entorno de trabajo dinámico y que entregue consistentemente soluciones innovadoras.'
+                titulo='INTERESTS'
+                contenido={pageData.interests}
                 />
             </div>
             <div className="derecha">
-                <Title>Experiencia</Title>
+                <Title>{pageData.title.experience}</Title>
                 <div className="cont_agrupado">
-                    <Experiencia 
-                    titulo = 'JPAWAJ SAC(Trabajo a tiempo completo y modalidad de trabajo híbrida) - Programador Full-stack'
-                    descripcion = {['Diseño e implementación de interfaces de usuario interactivas y responsivas utilizando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.','Diseño de la interfaz de usuario y la experiencia de usuario (UI/UX).','Desarrollo y mantenimiento de la funcionalidad del backend utilizando PHP con el framework Laravel, manejando la lógica del lado del servidor y la integración de la base de datos.','Diseño e implementación de la base de datos, optimizando las consultas.']}
-                    fecha_inicio = 'Feb-21'
-                    fecha_fin = 'Abr-23'
-                    pais = 'Peru'
-                    herramientas = 'JavaScript, PHP, Laravel, MySQL, CSS, HTML'
-                    />
 
-                    <Experiencia 
-                    titulo = 'JPAWAJ SAC(Trabajo a tiempo completo y modalidad de trabajo híbrida) - Programador Full-stack'
-                    descripcion = {['Diseño e implementación de interfaces de usuario interactivas y responsivas utilizando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.','Diseño de la interfaz de usuario y la experiencia de usuario (UI/UX).','Desarrollo y mantenimiento de la funcionalidad del backend utilizando PHP con el framework Laravel, manejando la lógica del lado del servidor y la integración de la base de datos.','Diseño e implementación de la base de datos, optimizando las consultas.']}
-                    fecha_inicio = 'Feb-21'
-                    fecha_fin = 'Abr-23'
-                    pais = 'Peru'
-                    herramientas = 'JavaScript, PHP, Laravel, MySQL, CSS, HTML'
-                    />
-
-                    <Experiencia 
-                    titulo = 'JPAWAJ SAC(Trabajo a tiempo completo y modalidad de trabajo híbrida) - Programador Full-stack'
-                    descripcion = {['Diseño e implementación de interfaces de usuario interactivas y responsivas utilizando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.','Diseño de la interfaz de usuario y la experiencia de usuario (UI/UX).','Desarrollo y mantenimiento de la funcionalidad del backend utilizando PHP con el framework Laravel, manejando la lógica del lado del servidor y la integración de la base de datos.','Diseño e implementación de la base de datos, optimizando las consultas.']}
-                    fecha_inicio = 'Feb-21'
-                    fecha_fin = 'Abr-23'
-                    pais = 'Peru'
-                    herramientas = 'JavaScript, PHP, Laravel, MySQL, CSS, HTML'
-                    />
+                    {pageData.experience.map((job, index) => (
+                        <Experiencia
+                        key = {index}
+                        titulo = {job.roleCompany}
+                        descripcion = {job.description}
+                        fecha_inicio = {job.startDate}
+                        fecha_fin = {job.endDate}
+                        pais = 'Peru'
+                        herramientas = {job.skills.join(", ")}
+                        />
+                    ))}
                 </div>
 
-                <Title>Educación</Title>
+                <Title>{pageData.title.education}</Title>
                 <div className="cont_agrupado">
                     <Cabecera derecha_superior='quinto año'>
                         <p>Ciencia de la Computación</p>
@@ -132,7 +118,7 @@ const CV = () => {
                     </Cabecera>
                 </div>
 
-                <Title>Cursos</Title>
+                <Title>{pageData.title.courses}</Title>
 
                 <div className="cont_agrupado">
                     <Cabecera derecha_superior='quinto año'>
@@ -146,7 +132,7 @@ const CV = () => {
                     </Cabecera>
                 </div>
                 
-                <Title>Lenguajes</Title>
+                <Title>{pageData.title.languages}</Title>
                 <div className="cont_agrupado">
                     <Cabecera>
                         <p>- <strong>Español: </strong>Nativo</p>

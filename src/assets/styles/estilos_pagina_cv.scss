@@ -135,6 +135,9 @@ html, body {
                         flex-grow: 1;
                     }
                 }
+                > p{
+                    line-height: 1.15;
+                }
             }
             
         }
@@ -229,6 +232,7 @@ html, body {
                     //background-color: red;
                     display: flex;
                     column-gap: 5pt;
+                    line-height: 1.2;
                     > p:first-child{
                         font-weight: var(--fuente_extrabold);
                     }
