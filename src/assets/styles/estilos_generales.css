@@ -46,16 +46,3 @@
     display: flex;
     justify-content: center;
 }
-
-
-.body-cv{
-    font-family: 'Roboto', sans-serif;
-    font-size: var(--fuente_tamanio_titulo_5);
-    font-weight: var(--fuente_regular);
-
-    background: rgb(9,31,42);
-    background: radial-gradient(circle, rgba(9,31,42,1) 0%, rgba(11,59,83,1) 98%);
-    color: var(--color_blanco);
-    display: flex;
-    justify-content: center;
-}

@@ -1,0 +1,244 @@
+:root{   
+    --fuente_regular:400;
+    --fuente_semibold:600;
+    --fuente_extrabold:800;
+    --fuente_black:900;
+
+    --fuente_cv_tamanio_titulo_1:22pt;
+    --fuente_cv_tamanio_titulo_2:18pt;
+    --fuente_cv_tamanio_titulo_3:12pt;
+    --fuente_cv_tamanio_titulo_4:10.5pt;
+    --fuente_cv_tamanio_titulo_5:8pt;
+
+    --color_azul_1:#072737;
+    --color_azul_0:#0B3B53;
+    --color_azul_-1:#1675A5;
+    --color_azul_-2:#33A9E4;
+
+    --color_verde_1:#073829;
+    --color_verde_0:#0B543D;
+    --color_verde_-1:#16A678;
+    --color_verde_-2:#33E4AC;
+
+    --color_negro:#1A1A1E;
+    --color_gris_1:#60606F;
+    --color_gris_0:#AEAEB9;
+    --color_gris_-1:#E4E4E8;
+    --color_blanco:#F3F3F5;
+}
+
+
+.body-cv {
+    width: 21cm;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+    background-color: rgb(231, 42, 42);
+}
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 0;
+        print-color-adjust: exact;
+        /* Otros ajustes de @page */
+    }
+
+
+
+
+    .body-cv {
+        font-family: serif;
+        margin: 0;
+
+        color: black;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        font-family: 'Roboto', sans-serif;
+        font-size: var(--fuente_cv_tamanio_titulo_4);
+        font-weight: var(--fuente_regular);
+
+        h1{
+            font-size: var(--fuente_cv_tamanio_titulo_1);
+        }
+
+        h2{
+            font-size: var(--fuente_cv_tamanio_titulo_2);
+        }
+
+        > .izquierda, .derecha{
+            height: 29.7cm;
+            padding: 0.7cm 0.5cm;
+        }
+
+        > .izquierda {
+            background-color: #E6E6E6;
+            width: 35%;
+
+            > h1{
+                font-weight: var(--fuente_extrabold);
+                margin-bottom: 0.7cm;
+            }
+    
+            > h2{
+                font-weight: var(--fuente_semibold);
+                margin-bottom: 0.7cm;
+            }
+
+            > .contenedor_datos{
+                display: flex;
+                flex-direction: column;
+                row-gap: 7pt;
+                margin-bottom: 30pt;
+
+                .dato{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 5pt;
+    
+                    > img{
+                        height: 20pt;
+                    }
+    
+                    > p{
+                        font-size: var(--fuente_cv_tamanio_titulo_3);
+                        font-weight: var(--fuente_semibold);
+                    }
+                }
+            }
+
+            > .seccion_izquierda{
+                //background-color: green;
+                display: flex;
+                flex-direction: column;
+                row-gap: 10pt;
+                margin-bottom: 20pt;
+
+                > div{
+                    display: flex;
+                    column-gap: 15pt;
+                    align-items: center;
+                    //background-color: yellow;
+                    
+                    >h2{
+                        font-weight: var(--fuente_semibold);
+                    }
+
+                    > span{
+                        background-color: black;
+                        height: 5pt;
+                        flex-grow: 1;
+                    }
+                }
+            }
+            
+        }
+
+        > .derecha {
+            background-color: white;
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 6pt;
+            
+
+            > .titulo_derecha{
+                background-color: black;
+                padding: 3pt 8pt;
+                font-size: 11pt;
+                font-weight: var(--fuente_semibold);
+                color: white;
+                //margin-bottom: 10pt;
+            }
+
+            > .cont_agrupado{
+                display: flex;
+                flex-direction: column;
+                row-gap: 10pt;
+                width: 100%;
+                margin-bottom: 8pt;
+            }
+
+
+            .cabecera{
+                font-size: var(--fuente_cv_tamanio_titulo_4);
+                display: flex;
+                justify-content: space-between;
+                //background-color: red;
+                width: 100%;
+                .texto{
+                    //background-color: red;
+                    line-height: 15pt;
+                    h3{
+                        text-decoration: underline;
+                        font-weight: var(--fuente_extrabold);
+                    }
+
+                    strong{
+                        font-weight: var(--fuente_extrabold);
+                    }
+                }
+
+                .derecha_s{
+                    //background-color: yellow;
+                    width: 60pt;
+                    font-size: var(--fuente_cv_tamanio_titulo_5);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-weight: var(--fuente_extrabold);
+                    text-align: end;
+                }
+
+                
+            }
+
+            .experiencia{
+                font-size: var(--fuente_cv_tamanio_titulo_4);
+                display: flex;
+                flex-direction: column;
+                row-gap: 5pt;
+                
+                .descripcion{
+                    font-size: var(--fuente_cv_tamanio_titulo_4);
+                    ul{
+                        list-style: none; /* 1. Quitamos los marcadores por defecto de la lista */
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5pt;
+                        li{
+                            position: relative;
+                            line-height: 1.15;
+                            padding-left: 5pt;
+                        }
+                        li::before {
+                            content: '- ';
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                }
+
+                .herramientas{
+                    //background-color: red;
+                    display: flex;
+                    column-gap: 5pt;
+                    > p:first-child{
+                        font-weight: var(--fuente_extrabold);
+                    }
+
+                    > p:nth-child(2){
+                        font-style:italic;
+                    }
+                }
+            }
+        }
+
+    }
+}
