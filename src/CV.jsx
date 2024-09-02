@@ -76,20 +76,20 @@ const CV = () => {
         <div className='body-cv'>
             <div className="izquierda">
                 <h1>Juan Diego <br/> Valdivia Mendoza</h1>
-                <h2>Full-Stack Developer</h2>
+                <h2>{pageData.job}</h2>
                 <div className="contenedor_datos">
-                    <Dato image={imageHelper.calendar_icon}>17 de Abril 2002</Dato>
-                    <Dato image={imageHelper.map_icon}>Peru</Dato>
-                    <Dato image={imageHelper.github_icon}>github.com/JD17VM</Dato>
-                    <Dato image={imageHelper.email_icon}>jdiegodiego4@gmail.com</Dato>
+                    <Dato image={imageHelper.calendar_icon}>{pageData.data.dateBirth}</Dato>
+                    <Dato image={imageHelper.map_icon}>{pageData.data.country}</Dato>
+                    <Dato image={imageHelper.github_icon}>{pageData.data.github}</Dato>
+                    <Dato image={imageHelper.email_icon}>{pageData.data.gmail}</Dato>
                 </div>
                 <Seccion_Izquierda 
-                titulo='ABOUT'
+                titulo={pageData.title.about}
                 contenido={pageData.about}
                 />
 
                 <Seccion_Izquierda 
-                titulo='INTERESTS'
+                titulo={pageData.title.interests}
                 contenido={pageData.interests}
                 />
             </div>
@@ -102,8 +102,8 @@ const CV = () => {
                         key = {index}
                         titulo = {job.roleCompany}
                         descripcion = {job.description}
-                        fecha_inicio = {job.startDate}
-                        fecha_fin = {job.endDate}
+                        fecha_inicio = {`${job.startMonth} ${job.startYear}`}
+                        fecha_fin = {`${job.endMonth} ${job.endYear}`}
                         pais = 'Peru'
                         herramientas = {job.skills.join(", ")}
                         />
@@ -112,32 +112,30 @@ const CV = () => {
 
                 <Title>{pageData.title.education}</Title>
                 <div className="cont_agrupado">
-                    <Cabecera derecha_superior='quinto año'>
-                        <p>Ciencia de la Computación</p>
-                        <strong>Universidad Nacional de San Agustín</strong>
+                    <Cabecera derecha_superior={pageData.education.year}>
+                        <p>{pageData.education.career}</p>
+                        <strong>{pageData.education.university}</strong>
                     </Cabecera>
                 </div>
 
                 <Title>{pageData.title.courses}</Title>
 
                 <div className="cont_agrupado">
-                    <Cabecera derecha_superior='quinto año'>
-                        <p>Aplicaciónes en Inteligencia Artifical AI</p>
-                        <strong>Universidad Continental</strong>
-                    </Cabecera>
+                    {pageData.courses.map((course, index) => (
+                        <Cabecera key={index}>
+                            <p>{course.course}</p>
+                            <strong>{course.institution}</strong>
+                        </Cabecera>
+                    ))}
 
-                    <Cabecera derecha_superior='quinto año'>
-                        <p>Cambridge English Entry Level Certificate in ESOL</p>
-                        <strong>International - University of Cambridge</strong>
-                    </Cabecera>
                 </div>
                 
                 <Title>{pageData.title.languages}</Title>
                 <div className="cont_agrupado">
                     <Cabecera>
-                        <p>- <strong>Español: </strong>Nativo</p>
-                        <p>- <strong>Inglés: </strong>Dominio</p>
-                        <p>- <strong>Portugués: </strong>Intermedio</p>
+                    {pageData.languages.map((language, index) => (
+                        <p key={index}>- <strong>{language.language}: </strong>{language.level}</p>
+                    ))}
                     </Cabecera>
                 </div>
             </div>

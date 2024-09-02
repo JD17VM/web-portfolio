@@ -90,7 +90,7 @@ const Portfolio = () => {
         <div className={styles['container-scroll-info-block']}>
             <div className={styles['info-block']}>
             <h1>Juan Diego Valdivia Mendoza</h1>
-            <p>Full-Stack Developer</p>
+            <p>{pageData.job}</p>
             <p>I build accessible, pixel-perfect digital experiences for the web.</p>
 
             <nav>
@@ -101,7 +101,7 @@ const Portfolio = () => {
                     onClick={(e) => handleNavClick(e, 'section1')}
                     className={activeSection === 'section1' ? styles.active : ''}
                     >
-                    ABOUT ME
+                    {pageData.title.about}
                     </a>
                 </li>
                 <li>
@@ -110,7 +110,7 @@ const Portfolio = () => {
                     onClick={(e) => handleNavClick(e, 'section2')}
                     className={activeSection === 'section2' ? styles.active : ''}
                     >
-                    INTERESTS
+                    {pageData.title.interests}
                     </a>
                 </li>
                 <li>
@@ -119,7 +119,7 @@ const Portfolio = () => {
                     onClick={(e) => handleNavClick(e, 'section3')}
                     className={activeSection === 'section3' ? styles.active : ''}
                     >
-                    EXPERIENCE
+                    {pageData.title.experience.toUpperCase()}
                     </a>
                 </li>
                 <li>
@@ -128,7 +128,7 @@ const Portfolio = () => {
                     onClick={(e) => handleNavClick(e, 'section4')}
                     className={activeSection === 'section4' ? styles.active : ''}
                     >
-                    PROJECTS
+                    {pageData.title.projects}
                     </a>
                 </li>
                 </ul>
@@ -143,9 +143,9 @@ const Portfolio = () => {
             <div className={styles['container-languages']}>
                 <h2>LANGUAGES</h2>
                 <ul>
-                <li><p>Spanish:</p> <p>Native</p></li>
-                <li><p>English:</p> <p>Proficient</p></li>
-                <li><p>Portuguese:</p> <p>Intermediate</p></li>
+                {pageData.languages.map((language, index) => (
+                    <li key={index}><p>{language.language}:</p> <p>{language.level}</p></li>
+                ))}
                 </ul>
             </div>
             </div>
@@ -153,24 +153,24 @@ const Portfolio = () => {
 
         <div className={styles['container-text-title']}>
             <div className={styles['text-title']} ref={section1Ref} id="section1">
-            <h2>ABOUT</h2>
+            <h2>{pageData.title.about}</h2>
             <p dangerouslySetInnerHTML={{ __html: pageData.about }}></p>
             </div>
 
             <div className={styles['text-title']} ref={section2Ref} id="section2">
-            <h2>INTERESTS</h2>
+            <h2>{pageData.title.interests}</h2>
             <p>{pageData.interests}</p>
             </div>
         </div>
 
         <div className={styles['container-experience']} ref={section3Ref} id="section3">
-            <h2>EXPERIENCE</h2>
+            <h2>{pageData.title.experience.toUpperCase()}</h2>
             <div>
             {pageData.experience.map((job, index) => (
                 <JobCard 
                 key = {index} 
-                startDate = {job.startDate} 
-                endDate = {job.endDate} 
+                startDate = {job.startYear} 
+                endDate = {job.endYear} 
                 roleCompany = {job.roleCompany} 
                 description = {job.description} 
                 skills ={job.skills} 
@@ -180,7 +180,7 @@ const Portfolio = () => {
         </div>
 
         <div className={styles['container-projects']} ref={section4Ref} id="section4">
-            <h2>PROJECTS</h2>
+            <h2>{pageData.title.projects}</h2>
             <div>
             {pageData.projects.map((project, index) => (
                 <ProjectCard
