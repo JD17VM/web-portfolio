@@ -31,7 +31,7 @@ const pageData = {
             startMonth: "Feb",    // Sin cambios (abreviatura común)
             endYear: "actualidad", // Traducido
             endMonth: "",
-            roleCompany: "Puesto Full-Stack y Modalidad Híbrida - JPAWAJ SAC", // Traducido
+            roleCompany: "Full-Stack y Modalidad Híbrida - JPAWAJ SAC", // Traducido
             description: [
                 "Desarrollé e implementé interfaces de usuario interactivas y responsivas usando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.", // Traducido
                 "Diseñé la interfaz de usuario y la experiencia de usuario (UI/UX) desde cero, enfocándome en mejorar la usabilidad y el atractivo visual general.", // Traducido
@@ -59,7 +59,7 @@ const pageData = {
             startMonth: "Ago",    // Sin cambios (abreviatura común)
             endYear: "2024",
             endMonth: "Oct",     // Sin cambios (abreviatura común)
-            roleCompany: "Puesto Full-Stack y Trabajo Remoto - Operaciones Topográficas y Agrimensuras (OTyM)", // Traducido
+            roleCompany: "Full-Stack y Trabajo Remoto - Operaciones Topográficas y Agrimensuras (OTyM)", // Traducido
             description: [
                 "Desarrollé e implementé interfaces de usuario interactivas y responsivas usando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.", // Traducido
                 "Diseñé la interfaz de usuario y la experiencia de usuario (UI/UX) desde cero, enfocándome en mejorar la usabilidad y el atractivo visual general.", // Traducido

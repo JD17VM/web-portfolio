@@ -28,6 +28,8 @@ const Portfolio = () => {
         currentLanguage = 'en';
     } else if(location.pathname.startsWith('/es')){
         currentLanguage = 'es'; // Asumir español para '/' y otras rutas
+    } else if(location.pathname.startsWith('/pt')){
+        currentLanguage = 'pt'; // Asumir español para '/' y otras rutas
     }
 
     useEffect(() => {
@@ -132,6 +134,8 @@ const Portfolio = () => {
             navigate('/es');
         } else if (selectedLang === 'en') {
             navigate('/en');
+        } else if (selectedLang === 'pt') {
+            navigate('/pt');
         }
     };
 
@@ -266,6 +270,7 @@ const Portfolio = () => {
                     >
                         <option value="es">Español</option>
                         <option value="en">English</option>
+                        <option value="pt">Português</option>
                     </select>
                     <span><IoIosArrowDown /></span>
                 </div>
