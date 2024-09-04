@@ -71,12 +71,12 @@ html, body {
             font-size: var(--fuente_cv_tamanio_titulo_2);
         }
 
-        > .izquierda, .derecha{
+        > .left-col, .right-col{
             height: 29.7cm;
             padding: 0.7cm 0.5cm;
         }
 
-        > .izquierda {
+        > .left-col {
             background-color: #E6E6E6;
             width: 35%;
 
@@ -90,13 +90,13 @@ html, body {
                 margin-bottom: 0.7cm;
             }
 
-            > .contenedor_datos{
+            > .left-col__personal-details{
                 display: flex;
                 flex-direction: column;
                 row-gap: 7pt;
                 margin-bottom: 30pt;
 
-                .dato{
+                .left-col__personal-detail-item{
                     display: flex;
                     align-items: center;
                     column-gap: 5pt;
@@ -112,7 +112,7 @@ html, body {
                 }
             }
 
-            > .seccion_izquierda{
+            > .left-col__text-block{
                 //background-color: green;
                 display: flex;
                 flex-direction: column;
@@ -142,7 +142,7 @@ html, body {
             
         }
 
-        > .derecha {
+        > .right-col{
             background-color: white;
             width: 65%;
             display: flex;
@@ -151,7 +151,7 @@ html, body {
             row-gap: 6pt;
             
 
-            > .titulo_derecha{
+            > .right-col__title{
                 background-color: black;
                 padding: 3pt 8pt;
                 font-size: 11pt;
@@ -160,7 +160,7 @@ html, body {
                 //margin-bottom: 10pt;
             }
 
-            > .cont_agrupado{
+            > .right-col__spacer{
                 display: flex;
                 flex-direction: column;
                 row-gap: 10pt;
@@ -169,13 +169,13 @@ html, body {
             }
 
 
-            .cabecera{
+            .right-col__meta-header{
                 font-size: var(--fuente_cv_tamanio_titulo_4);
                 display: flex;
                 justify-content: space-between;
                 //background-color: red;
                 width: 100%;
-                .texto{
+                .right-col__meta-header-text{
                     //background-color: red;
                     line-height: 15pt;
                     h3{
@@ -188,7 +188,7 @@ html, body {
                     }
                 }
 
-                .derecha_s{
+                .right-col__meta-header-aside{
                     //background-color: yellow;
                     width: 60pt;
                     font-size: var(--fuente_cv_tamanio_titulo_5);
@@ -202,13 +202,13 @@ html, body {
                 
             }
 
-            .experiencia{
+            .right-col__experience-item{
                 font-size: var(--fuente_cv_tamanio_titulo_4);
                 display: flex;
                 flex-direction: column;
                 row-gap: 5pt;
                 
-                .descripcion{
+                .right-col__experience-description{
                     font-size: var(--fuente_cv_tamanio_titulo_4);
                     ul{
                         list-style: none; /* 1. Quitamos los marcadores por defecto de la lista */
@@ -228,7 +228,7 @@ html, body {
                     }
                 }
 
-                .herramientas{
+                .right-col__experience_skills{
                     //background-color: red;
                     display: flex;
                     column-gap: 5pt;

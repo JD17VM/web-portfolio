@@ -6,18 +6,18 @@ import imageHelper from './utils/imageHelper';
 
 import pageData from "./data/data"
 
-const Dato = ({image, children}) => {
+const PersonalDetailItem = ({image, children}) => {
     return (
-        <div className='dato'>
+        <div className='left-col__personal-detail-item'>
             <img src={image} alt="" />
             <p>{children}</p>
         </div>
     );
 }
 
-const Seccion_Izquierda = ({titulo,contenido}) => {
+const TextBlock = ({titulo,contenido}) => {
     return (
-        <div className="seccion_izquierda">
+        <div className="left-col__text-block">
             <div>
                 <h2>{titulo}</h2>
                 <span></span>
@@ -29,15 +29,15 @@ const Seccion_Izquierda = ({titulo,contenido}) => {
 
 const Title = ({children}) => {
     return (
-        <h2 className='titulo_derecha'>{children}</h2>
+        <h2 className='right-col__title'>{children}</h2>
     )
 }
 
-const Cabecera = ({children, derecha_superior,derecha_inferior}) => {
+const MetaHeader = ({children, derecha_superior,derecha_inferior}) => {
     return (
-        <div className="cabecera">
-            <div className="texto">{children}</div>
-            <div className="derecha_s">
+        <div className="right-col__meta-header">
+            <div className="right-col__meta-header-text">{children}</div>
+            <div className="right-col__meta-header-aside">
                 <div>{derecha_superior}</div>
                 {derecha_inferior}
             </div>
@@ -45,13 +45,13 @@ const Cabecera = ({children, derecha_superior,derecha_inferior}) => {
     )
 }
 
-const Experiencia = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramientas}) => {
+const ExperienceItem = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramientas}) => {
     return(
-        <div className='experiencia'>
-            <Cabecera derecha_superior={<><p>{fecha_inicio}</p><p> to {fecha_fin}</p></>}  derecha_inferior={pais}>
+        <div className='right-col__experience-item'>
+            <MetaHeader derecha_superior={<><p>{fecha_inicio}</p><p> to {fecha_fin}</p></>}  derecha_inferior={pais}>
                 <h3>{titulo}</h3>
-            </Cabecera>
-            <div className="descripcion">
+            </MetaHeader>
+            <div className="right-col__experience-description">
                 {Array.isArray(descripcion) ? (
                     <ul>
                         {descripcion.map((item, index) => (
@@ -63,7 +63,7 @@ const Experiencia = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramient
                 )}
             </div>
             
-            <div className="herramientas">
+            <div className="right-col__experience_skills">
                 <p>{pageData.title.tools}:</p>
                 <p>{herramientas}</p>
             </div>
@@ -74,31 +74,30 @@ const Experiencia = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramient
 const CV = () => {
     return (
         <div className='body-cv'>
-            <div className="izquierda">
+            <div className="left-col">
                 <h1>Juan Diego <br/> Valdivia Mendoza</h1>
                 <h2>{pageData.job}</h2>
-                <div className="contenedor_datos">
-                    <Dato image={imageHelper.calendar_icon}>{pageData.data.dateBirth}</Dato>
-                    <Dato image={imageHelper.map_icon}>{pageData.data.country}</Dato>
-                    <Dato image={imageHelper.github_icon}>{pageData.data.github}</Dato>
-                    <Dato image={imageHelper.email_icon}>{pageData.data.gmail}</Dato>
+                <div className="left-col__personal-details">
+                    <PersonalDetailItem image={imageHelper.calendar_icon}>{pageData.data.dateBirth}</PersonalDetailItem>
+                    <PersonalDetailItem image={imageHelper.map_icon}>{pageData.data.country}</PersonalDetailItem>
+                    <PersonalDetailItem image={imageHelper.github_icon}>{pageData.data.github}</PersonalDetailItem>
+                    <PersonalDetailItem image={imageHelper.email_icon}>{pageData.data.gmail}</PersonalDetailItem>
                 </div>
-                <Seccion_Izquierda 
+                <TextBlock 
                 titulo={pageData.title.about}
                 contenido={pageData.about}
                 />
 
-                <Seccion_Izquierda 
+                <TextBlock 
                 titulo={pageData.title.interests}
                 contenido={pageData.interests}
                 />
             </div>
-            <div className="derecha">
+            <div className="right-col">
                 <Title>{pageData.title.experience}</Title>
-                <div className="cont_agrupado">
-
+                <div className="right-col__spacer">
                     {pageData.experience.map((job, index) => (
-                        <Experiencia
+                        <ExperienceItem
                         key = {index}
                         titulo = {job.roleCompany}
                         descripcion = {job.description}
@@ -111,32 +110,32 @@ const CV = () => {
                 </div>
 
                 <Title>{pageData.title.education}</Title>
-                <div className="cont_agrupado">
-                    <Cabecera derecha_superior={pageData.education.year}>
+                <div className="right-col__spacer">
+                    <MetaHeader derecha_superior={pageData.education.year}>
                         <p>{pageData.education.career}</p>
                         <strong>{pageData.education.university}</strong>
-                    </Cabecera>
+                    </MetaHeader>
                 </div>
 
                 <Title>{pageData.title.courses}</Title>
 
-                <div className="cont_agrupado">
+                <div className="right-col__spacer">
                     {pageData.courses.map((course, index) => (
-                        <Cabecera key={index}>
+                        <MetaHeader key={index}>
                             <p>{course.course}</p>
                             <strong>{course.institution}</strong>
-                        </Cabecera>
+                        </MetaHeader>
                     ))}
 
                 </div>
                 
                 <Title>{pageData.title.languages}</Title>
-                <div className="cont_agrupado">
-                    <Cabecera>
+                <div className="right-col__spacer">
+                    <MetaHeader>
                     {pageData.languages.map((language, index) => (
                         <p key={index}>- <strong>{language.language}: </strong>{language.level}</p>
                     ))}
-                    </Cabecera>
+                    </MetaHeader>
                 </div>
             </div>
         </div>
