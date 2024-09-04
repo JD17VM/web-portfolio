@@ -7,9 +7,10 @@ function App() {
     <BrowserRouter basename="/web-portfolio">
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/cv" element={<CV />} />
+        <Route path="/:language" element={<Portfolio />} />
+        <Route path="/:language/cv" element={<CV />} />
       </Routes>
-      <Link to="/cv" className='cv-link'></Link>
+      <Link to="/:language/cv" className='cv-link'></Link>
     </BrowserRouter>
   )
 }

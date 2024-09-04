@@ -6,111 +6,145 @@ import { JobCard, ProjectCard } from './widgets/JobCard';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 
-
-import pageData from "./data/data"
-
 const Portfolio = () => {
+
     const [activeSection, setActiveSection] = useState('section1');
+    const [pageData, setPageData] = useState(null);     // Para guardar los datos cargados dinámicamente
+    const [isLoading, setIsLoading] = useState(true);    // Para saber si los datos están cargando
+    const [errorLoading, setErrorLoading] = useState(false); // Para manejar errores de carga
 
     // Referencias a las secciones
+
     const section1Ref = useRef(null);
     const section2Ref = useRef(null);
     const section3Ref = useRef(null);
     const section4Ref = useRef(null);
 
-    // Función throttle para mejorar el rendimiento
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    let currentLanguage;
+    if (location.pathname.startsWith('/en')) {
+        currentLanguage = 'en';
+    } else if(location.pathname.startsWith('/es')){
+        currentLanguage = 'es'; // Asumir español para '/' y otras rutas
+    }
+
+    useEffect(() => {
+        const loadData = async () => {
+            setIsLoading(true);      // Inicia la carga
+            setErrorLoading(false);  // Resetea el error
+            try {
+                // Importación dinámica basada en el idioma actual
+                // Asegúrate que los archivos se llamen 'data-es.js' y 'data-en.js'
+                // y que estén en la carpeta './data/' relativa a este archivo.
+                const dataModule = await import(`./data/data-${currentLanguage}.js`);
+                setPageData(dataModule.default); // Guarda los datos del export default
+            } catch (err) {
+                console.error(`Error loading data for language: ${currentLanguage}`, err);
+                setErrorLoading(true); // Marca el error
+                // Opcionalmente, podrías intentar cargar un idioma por defecto aquí
+            } finally {
+                setIsLoading(false); // Termina la carga (con éxito o error)
+            }
+        };
+
+        loadData(); // Ejecuta la carga de datos
+
+    }, [currentLanguage]);
+
+
     const throttle = (func, limit) => {
         let inThrottle;
         return function (...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-        }
+            if (!inThrottle) {
+                func.apply(this, args);
+                inThrottle = true;
+                setTimeout(() => (inThrottle = false), limit);
+            }
         };
     };
 
+
     useEffect(() => {
-        const handleScroll = () => {
-        const scrollPosition = window.scrollY;
+        // Solo añadir listeners si NO estamos cargando Y las refs existen
+        if (!isLoading && pageData && section1Ref.current && section2Ref.current && section3Ref.current && section4Ref.current) {
+            const handleScroll = () => {
+                const scrollPosition = window.scrollY;
+                // Usar try/catch por si alguna ref se vuelve null inesperadamente
+                try {
+                     if (scrollPosition < section2Ref.current.offsetTop - 100) {
+                         setActiveSection('section1');
+                     } else if (scrollPosition < section3Ref.current.offsetTop - 100) {
+                         setActiveSection('section2');
+                     } else if (scrollPosition < section4Ref.current.offsetTop - 100) {
+                         setActiveSection('section3');
+                     } else {
+                         setActiveSection('section4');
+                     }
+                } catch (e) {
+                    // console.warn("Error accessing ref offsetTop during scroll", e);
+                    // Podría pasar si el componente se desmonta durante el scroll
+                }
+            };
 
-        // Verificar en qué sección está el usuario
-        if (scrollPosition < section2Ref.current.offsetTop - 100) {
-            setActiveSection('section1');
-        } else if (scrollPosition < section3Ref.current.offsetTop - 100) {
-            setActiveSection('section2');
-        } else if (scrollPosition < section4Ref.current.offsetTop - 100) {
-            setActiveSection('section3');
-        } else {
-            setActiveSection('section4');
+            const throttledScroll = throttle(handleScroll, 100);
+            window.addEventListener('scroll', throttledScroll);
+
+            // Limpiar el listener al desmontar o antes de re-ejecutar el efecto
+            return () => {
+                window.removeEventListener('scroll', throttledScroll);
+            };
         }
-        };
+    // Ejecutar cuando termine de cargar O cambie pageData (por si cambia layout)
+    }, [isLoading, pageData]);
 
-        // Añadir throttle al evento scroll
-        const throttledScroll = throttle(handleScroll, 100);
-        window.addEventListener('scroll', throttledScroll);
-
-        // Limpiar el event listener al desmontar el componente
-        return () => {
-        window.removeEventListener('scroll', throttledScroll);
-        };
-    }, []);
+    // handleLanguageChange (igual que antes, cambia la RUTA, lo que disparará el useEffect)
 
     const handleNavClick = (e, sectionId) => {
         e.preventDefault();
         let section;
+        // Asegurarse que las refs existen antes de acceder a offsetTop
+        try {
+            switch (sectionId) {
+                case 'section1': section = section1Ref.current; break;
+                case 'section2': section = section2Ref.current; break;
+                case 'section3': section = section3Ref.current; break;
+                case 'section4': section = section4Ref.current; break;
+                default: section = section1Ref.current;
+            }
 
-        // Obtener la referencia correcta según el sectionId
-        switch (sectionId) {
-        case 'section1':
-            section = section1Ref.current;
-            break;
-        case 'section2':
-            section = section2Ref.current;
-            break;
-        case 'section3':
-            section = section3Ref.current;
-            break;
-        case 'section4':
-            section = section4Ref.current;
-            break;
-        default:
-            section = section1Ref.current;
+            if (section) { // Verificar que la sección (ref.current) no sea null
+                 window.scrollTo({
+                     top: section.offsetTop - 50, // Ajustar offset según necesidad
+                     behavior: 'smooth'
+                 });
+                 setActiveSection(sectionId);
+            }
+        } catch (e) {
+             console.error("Error scrolling to section", e);
         }
-
-        // Desplazamiento suave
-        window.scrollTo({
-        top: section.offsetTop - 50,
-        behavior: 'smooth'
-        });
-
-        setActiveSection(sectionId);
     };
 
-    const navigate = useNavigate();
-    // 2. Obtén el objeto location
-    const location = useLocation();
-
-    // 3. Determina el idioma actual basándote en la ruta (pathname)
-    let currentLanguage;
-    if (location.pathname.startsWith('/en')) {
-        // Si la ruta empieza con /en, el idioma es inglés
-        currentLanguage = 'en';
-    } else {
-        // Para cualquier otra ruta (incluyendo la raíz '/'), asumimos español como defecto
-        currentLanguage = 'es';
-    }
-    // --- Ajusta esta lógica si tus rutas son diferentes (ej: si español es '/es') ---
-
-    // El manejador para el cambio de idioma sigue igual
     const handleLanguageChange = (event) => {
         const selectedLang = event.target.value;
         if (selectedLang === 'es') {
-            navigate('/'); // O '/es' si esa es tu ruta para español
+            navigate('/es');
         } else if (selectedLang === 'en') {
             navigate('/en');
         }
     };
+
+    // --- RENDERIZADO CONDICIONAL (mientras carga o si hay error) ---
+    if (isLoading) {
+        // Puedes poner un componente Spinner o Skeleton aquí
+        return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
+    }
+
+    if (errorLoading || !pageData) {
+        // Puedes poner un mensaje de error más elaborado
+        return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'red' }}>Error loading data.</div>;
+    }
 
     return (
         <div className='body'>

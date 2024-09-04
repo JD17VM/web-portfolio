@@ -4,7 +4,7 @@ import './assets/styles/cv-page-styles.scss';
 
 import imageHelper from './utils/imageHelper';
 
-import pageData from "./data/data"
+import pageData from "./data/data-en.js"
 
 const PersonalDetailItem = ({image, children}) => {
     return (
