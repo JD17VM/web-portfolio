@@ -10,7 +10,6 @@ function App() {
         <Route path="/:language" element={<Portfolio />} />
         <Route path="/:language/cv" element={<CV />} />
       </Routes>
-      <Link to="/:language/cv" className='cv-link'></Link>
     </BrowserRouter>
   )
 }

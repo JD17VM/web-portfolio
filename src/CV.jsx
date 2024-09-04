@@ -134,7 +134,7 @@ const CV = () => {
         <div className='body-cv'>
             <title>CV_Juan_Diego_Valdivia_Mendoza</title>
 
-            <div className="left-col">
+            <div className="left-col" style={{width: `${35 + pageData.scale.left_col_width}%`}}>
                 <h1>Juan Diego <br /> Valdivia Mendoza</h1>
                 <h2>{pageData.job}</h2>
                 <div className="left-col__personal-details">
@@ -163,7 +163,7 @@ const CV = () => {
                  )}
             </div>
 
-            <div className="right-col">
+            <div className="right-col" style={{rowGap: `${3.5 + pageData.scale.right_col_row_gap}pt`}}>
              {/* Asegúrate que pageData.title y pageData.experience existen */}
                 {pageData.title && pageData.experience && (
                     <>

@@ -129,7 +129,12 @@ const pageData = {
             skills : ["JavaScript", "Node.js", "React", "Remotion", "JSX"],
             link: "https://github.com/JD17VM/launchlab-vr-arrowascend-web"
         },
-    ]
+    ],
+
+    scale: {
+        left_col_width: 0, //%
+        right_col_row_gap: 0, //pt
+    }
 }
 
 export default pageData;
