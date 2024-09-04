@@ -202,9 +202,9 @@ const Portfolio = () => {
                         </nav>
 
                         <div className={styles['social-links']}>
-                            <a href=""><FaGithub /></a>
-                            <a href=""><MdEmail /></a>
-                            <a href=""><FaLinkedin /></a>
+                            <a href="https://github.com/JD17VM" target="_blank"><FaGithub /></a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jdiegodiego4@gmail.com" target="_blank"><MdEmail /></a>
+                            <a href="https://www.linkedin.com/in/juan-diego-v-bb399619a" target="_blank"><FaLinkedin /></a>
                         </div>
 
                         <div className={styles['container-languages']}>
