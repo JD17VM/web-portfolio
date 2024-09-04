@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import './assets/styles/estilos_generales.css'
 import './assets/styles/estilos_pagina_cv.scss';
 
@@ -15,14 +15,14 @@ const PersonalDetailItem = ({image, children}) => {
     );
 }
 
-const TextBlock = ({titulo,contenido}) => {
+const TextBlock = ({title,content}) => {
     return (
         <div className="left-col__text-block">
             <div>
-                <h2>{titulo}</h2>
+                <h2>{title}</h2>
                 <span></span>
             </div>
-            <p dangerouslySetInnerHTML={{ __html: contenido }}></p>
+            <p dangerouslySetInnerHTML={{ __html: content }}></p>
         </div>
     )
 }
@@ -33,39 +33,39 @@ const Title = ({children}) => {
     )
 }
 
-const MetaHeader = ({children, derecha_superior,derecha_inferior}) => {
+const MetaHeader = ({children, aside_upper,aside_lower}) => {
     return (
         <div className="right-col__meta-header">
             <div className="right-col__meta-header-text">{children}</div>
             <div className="right-col__meta-header-aside">
-                <div>{derecha_superior}</div>
-                {derecha_inferior}
+                <div>{aside_upper}</div>
+                {aside_lower}
             </div>
         </div>
     )
 }
 
-const ExperienceItem = ({titulo,descripcion,fecha_inicio,fecha_fin,pais, herramientas}) => {
+const ExperienceItem = ({title,description,start_date,end_date,country, skills}) => {
     return(
         <div className='right-col__experience-item'>
-            <MetaHeader derecha_superior={<><p>{fecha_inicio}</p><p> to {fecha_fin}</p></>}  derecha_inferior={pais}>
-                <h3>{titulo}</h3>
+            <MetaHeader aside_upper={<><p>{start_date}</p><p> to {end_date}</p></>}  aside_lower={country}>
+                <h3>{title}</h3>
             </MetaHeader>
             <div className="right-col__experience-description">
-                {Array.isArray(descripcion) ? (
+                {Array.isArray(description) ? (
                     <ul>
-                        {descripcion.map((item, index) => (
+                        {description.map((item, index) => (
                             <li key={index}>{item}</li>
                         ))}
                     </ul>
                 ) : (
-                    <p>{descripcion}</p>
+                    <p>{description}</p>
                 )}
             </div>
             
             <div className="right-col__experience_skills">
                 <p>{pageData.title.tools}:</p>
-                <p>{herramientas}</p>
+                <p>{skills}</p>
             </div>
         </div>
     )
@@ -84,13 +84,13 @@ const CV = () => {
                     <PersonalDetailItem image={imageHelper.email_icon}>{pageData.data.gmail}</PersonalDetailItem>
                 </div>
                 <TextBlock 
-                titulo={pageData.title.about}
-                contenido={pageData.about}
+                title={pageData.title.about}
+                content={pageData.about}
                 />
 
                 <TextBlock 
-                titulo={pageData.title.interests}
-                contenido={pageData.interests}
+                title={pageData.title.interests}
+                content={pageData.interests}
                 />
             </div>
             <div className="right-col">
@@ -99,19 +99,19 @@ const CV = () => {
                     {pageData.experience.map((job, index) => (
                         <ExperienceItem
                         key = {index}
-                        titulo = {job.roleCompany}
-                        descripcion = {job.description}
-                        fecha_inicio = {`${job.startMonth} ${job.startYear}`}
-                        fecha_fin = {`${job.endMonth} ${job.endYear}`}
-                        pais = 'Peru'
-                        herramientas = {job.skills.join(", ")}
+                        title = {job.roleCompany}
+                        description = {job.description}
+                        start_date = {`${job.startMonth} ${job.startYear}`}
+                        end_date = {`${job.endMonth} ${job.endYear}`}
+                        country = 'Peru'
+                        skills = {job.skills.join(", ")}
                         />
                     ))}
                 </div>
 
                 <Title>{pageData.title.education}</Title>
                 <div className="right-col__spacer">
-                    <MetaHeader derecha_superior={pageData.education.year}>
+                    <MetaHeader aside_upper={pageData.education.year}>
                         <p>{pageData.education.career}</p>
                         <strong>{pageData.education.university}</strong>
                     </MetaHeader>
