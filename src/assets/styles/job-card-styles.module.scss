@@ -56,6 +56,13 @@
     "skill_label skill_label"
     ;
 
+    &:hover{
+        $color_hover_job_card: rgba(104, 104, 104, 0.178);
+        background-color: $color_hover_job_card;
+        box-shadow: 0px 0px 10px 0px $color_hover_job_card;
+        transition: all 0.3s ease-in-out;
+    }
+
     > p{
         grid-area: date_to_date;
     }

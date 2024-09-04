@@ -34,10 +34,11 @@ export const ProjectCard = ({
     date = "YEAR", 
     title = "This is the project title", 
     description = "In the designated area below, users are kindly requested to provide a comprehensive description of the project at hand. This description should encompass the most relevant aspects of the project.", 
-    skills = ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8"]
+    skills = ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8"],
+    link = ""
 }) => {
     return(
-        <div className={styles['project-card']}>
+        <a href={link} target="_blank" className={styles['project-card']}>
             <div className={styles['cont-img']}>
                 <img src={img} alt="My image project" />
             </div>
@@ -47,6 +48,6 @@ export const ProjectCard = ({
                 <p>{description}</p>
             </div>
             <SkillLabelContainer skills={skills}/>
-        </div>
+        </a>
     )
 }

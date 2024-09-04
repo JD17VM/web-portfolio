@@ -1,6 +1,6 @@
 import React from 'react';
 import './assets/styles/estilos_generales.css'
-import './assets/styles/estilos_pagina_cv.scss';
+import './assets/styles/cv-page-styles.scss';
 
 import imageHelper from './utils/imageHelper';
 
