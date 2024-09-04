@@ -3,6 +3,9 @@ import styles from './assets/styles/estilos_pagina_inicio.module.scss';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { JobCard, ProjectCard } from './widgets/JobCard';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { IoIosArrowDown } from "react-icons/io";
+
 
 import pageData from "./data/data"
 
@@ -82,6 +85,31 @@ const Portfolio = () => {
         });
 
         setActiveSection(sectionId);
+    };
+
+    const navigate = useNavigate();
+    // 2. Obtén el objeto location
+    const location = useLocation();
+
+    // 3. Determina el idioma actual basándote en la ruta (pathname)
+    let currentLanguage;
+    if (location.pathname.startsWith('/en')) {
+        // Si la ruta empieza con /en, el idioma es inglés
+        currentLanguage = 'en';
+    } else {
+        // Para cualquier otra ruta (incluyendo la raíz '/'), asumimos español como defecto
+        currentLanguage = 'es';
+    }
+    // --- Ajusta esta lógica si tus rutas son diferentes (ej: si español es '/es') ---
+
+    // El manejador para el cambio de idioma sigue igual
+    const handleLanguageChange = (event) => {
+        const selectedLang = event.target.value;
+        if (selectedLang === 'es') {
+            navigate('/'); // O '/es' si esa es tu ruta para español
+        } else if (selectedLang === 'en') {
+            navigate('/en');
+        }
     };
 
     return (
@@ -195,6 +223,17 @@ const Portfolio = () => {
                             />
                         ))}
                     </div>
+                </div>
+                <div className={styles['language-selector']}>
+                    <select
+                        name="LANG"
+                        onChange={handleLanguageChange} // Añade el manejador onChange
+                        value={currentLanguage} // Opcional: para que el select muestre el idioma actual
+                    >
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
+                    <span><IoIosArrowDown /></span>
                 </div>
             </div>
         </div>

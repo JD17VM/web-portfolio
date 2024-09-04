@@ -123,3 +123,65 @@ a {
 *{
   box-sizing: border-box;
 }
+
+/* Reseteo base para el elemento select */
+select {
+  /* Propiedad clave para quitar la apariencia nativa (incluye la flecha) */
+  -webkit-appearance: none; /* Prefijo para Chrome, Safari, Edge, Opera */
+  -moz-appearance: none;    /* Prefijo para Firefox */
+  appearance: none;         /* Estándar */
+
+  /* Eliminar borde por defecto */
+  border: none;
+
+  /* Eliminar redondeo de esquinas por defecto */
+  border-radius: 0;
+
+  /* Eliminar color de fondo por defecto (o establecer uno base) */
+  background-color: transparent; /* O 'white' si prefieres una base blanca */
+
+  /* Eliminar padding por defecto (ajusta luego si necesitas uno base) */
+  padding: 0 1em 0 0; /* DEJAMOS padding derecho para que el texto no se solape con la flecha custom que añadirás */
+
+  /* Eliminar margen por defecto */
+  margin: 0;
+
+  /* Asegurar que herede estilos de fuente del entorno */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; /* Altura de línea */
+
+  /* Asegurar que herede el color de texto */
+  color: inherit;
+
+  /* Cambiar el cursor para indicar que es clickeable */
+  cursor: pointer;
+
+  /* Opcional: Controlar cómo se muestra y su ancho */
+  /* display: inline-block; */
+  /* width: auto; o 100% o un valor específico */
+
+  /* --- NOTAS IMPORTANTES --- */
+  /* 1. Necesitarás añadir tu propia flecha desplegable */
+  /* usualmente con background-image en el select o */
+  /* con pseudo-elementos en un contenedor padre. */
+  /* 2. ¡No olvides los estilos de foco por accesibilidad! */
+}
+
+/* Estilos de Foco (¡Muy importante para accesibilidad!) */
+/* No uses 'outline: none;' sin proporcionar una alternativa visual clara */
+select:focus {
+  /* Ejemplo de estilo de foco visible */
+  outline: none; /* Un color de ejemplo */
+  outline-offset: 2px;
+
+  /* Alternativa usando box-shadow (no afectada por outline-offset) */
+  /* box-shadow: 0 0 0 2px dodgerblue; */
+}
+
+/* Opcional: Estilos para la opción deshabilitada */
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  /* otros estilos para indicar que está deshabilitado */
+}
