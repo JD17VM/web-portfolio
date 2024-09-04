@@ -34,8 +34,17 @@
 
 .job-card{  
     display: flex;    
-    > p{
+    > div{
         flex-shrink: 0;
+        min-width: 70px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        > p{
+            font-size: var(--fuente_tamanio_titulo_5);
+            color: var(--color_gris_0);
+        }
     }
 
     > div.cont-info{
@@ -105,6 +114,11 @@
 
     .job-card{
         flex-direction: column;
+        > div{
+            min-width: none;
+            flex-direction: row;
+            column-gap: 0.3rem;
+        }
     }
 }
 

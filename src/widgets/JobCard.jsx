@@ -11,7 +11,16 @@ export const JobCard = ({
 }) => {
     return(
         <div className={styles['job-card']}>
-            <p>{startDate} to {endDate}</p>
+            <div>
+                {startDate === endDate ? (
+                    <p>{startDate}</p>
+                ) : (
+                    <>
+                        <p>{startDate}</p>
+                        <p>to {endDate}</p>
+                    </>
+                )}
+            </div>
             <div className={styles['cont-info']}>
                 <h3>{roleCompany}</h3>
                 {Array.isArray(description) ? (

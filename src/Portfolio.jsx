@@ -238,8 +238,8 @@ const Portfolio = () => {
                         {pageData.experience.map((job, index) => (
                             <JobCard
                                 key={index}
-                                startDate={job.startYear}
-                                endDate={job.endYear}
+                                startDate={`${job.startMonth} ${job.startYear}`}
+                                endDate={`${job.endMonth} ${job.endYear} `}
                                 roleCompany={job.roleCompany}
                                 description={job.description}
                                 skills={job.skills}
