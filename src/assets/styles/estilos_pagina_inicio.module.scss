@@ -198,6 +198,9 @@ $padding_top_info_block_container_text_title: 15px;
         "container-text-title"
         "container-experience"
         "container-projects";
+        .info-block{
+            margin-top: 1rem;
+        }
     }
 
     .container-scroll-info-block{
@@ -214,5 +217,6 @@ $padding_top_info_block_container_text_title: 15px;
 @media only screen and (max-width: 379px) { /* Pantallas muy pequeñas 380*/
     .container-total {
         max-width: 340px;
+
     }
 }
