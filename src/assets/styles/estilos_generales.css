@@ -45,4 +45,13 @@
     color: var(--color_blanco);
     display: flex;
     justify-content: center;
+
+}
+
+.cv-link{
+    position: absolute;
+    top:0;
+    width: 30px;
+    height: 30px;
+    cursor: default;
 }

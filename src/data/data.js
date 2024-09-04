@@ -106,7 +106,7 @@ const pageData = {
 
     projects : [
         {
-            img : "/imgs/projects/moliplast_web.png", 
+            img : "./imgs/projects/moliplast_web.png", 
             date : "2025", 
             title : "Moliplast Web", 
             description : "Single Page Application (SPA) developed with React.js and SCSS for a dynamic frontend experience, seamlessly integrated with a Laravel REST API backend.", 
@@ -114,7 +114,7 @@ const pageData = {
             link: "https://github.com/JD17VM/moliplast-web"
         },
         {
-            img : "/imgs/projects/dynamic_video_generator.png", 
+            img : "./imgs/projects/dynamic_video_generator.png", 
             date : "2024", 
             title : "Dynamic Product Video Generator", 
             description : "Web application that converts product information into professional marketing videos using Remotion. Features an intuitive form interface to generate dynamic product showcase videos with custom transitions and overlays.", 
@@ -122,7 +122,7 @@ const pageData = {
             link: "https://github.com/JD17VM/dynamic-product-video-generator"
         },
         {
-            img : "/imgs/projects/ll_aa.png", 
+            img : "./imgs/projects/ll_aa.png", 
             date : "2024", 
             title : "Launch Lab and Arrow Ascend Web", 
             description : "This website showcases two immersive VR projects and the development process behind them, with a focus on proper interface design.", 
