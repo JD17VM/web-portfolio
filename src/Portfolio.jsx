@@ -86,6 +86,7 @@ const Portfolio = () => {
 
     return (
         <div className='body'>
+            <title>Portfolio JD17VM</title>
         <div className={styles['container-total']}>
         <div className={styles['container-scroll-info-block']}>
             <div className={styles['info-block']}>

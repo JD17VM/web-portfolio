@@ -74,6 +74,7 @@ const ExperienceItem = ({title,description,start_date,end_date,country, skills})
 const CV = () => {
     return (
         <div className='body-cv'>
+            <title>CV_Juan_Diego_Valdivia_Mendoza</title>
             <div className="left-col">
                 <h1>Juan Diego <br/> Valdivia Mendoza</h1>
                 <h2>{pageData.job}</h2>
