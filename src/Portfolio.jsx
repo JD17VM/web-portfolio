@@ -30,6 +30,8 @@ const Portfolio = () => {
         currentLanguage = 'es'; // Asumir español para '/' y otras rutas
     } else if(location.pathname.startsWith('/pt')){
         currentLanguage = 'pt'; // Asumir español para '/' y otras rutas
+    } else{
+        currentLanguage = 'en';
     }
 
     useEffect(() => {
