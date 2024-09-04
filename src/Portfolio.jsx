@@ -185,10 +185,12 @@ const Portfolio = () => {
             {pageData.projects.map((project, index) => (
                 <ProjectCard
                 key = {index}
+                title = {project.title}
                 img = {project.img}
                 date = {project.date}
                 description = {project.description}
                 skills = {project.skills}
+                link={project.link}
                 />
             ))}
             </div>

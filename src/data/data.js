@@ -106,32 +106,28 @@ const pageData = {
 
     projects : [
         {
-            img : "/imgs/projects/melgar.jpg", 
-            date : "2020", 
+            img : "/imgs/projects/moliplast_web.png", 
+            date : "2025", 
             title : "Moliplast Web", 
-            description : "Iassn the designated area below, users are kindly requested to provide a comprehensive description of the project at hand. This description should encompass the most relevant aspects of the project.", 
-            skills : ["Skilsdl 1", "Sasdkill 2", "asdSkill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skilasdl 8"]
+            description : "Single Page Application (SPA) developed with React.js and SCSS for a dynamic frontend experience, seamlessly integrated with a Laravel REST API backend.", 
+            skills : ["JavaScript", "Node.js", "React", "JSX", "PHP", "Laravel", "MySQL", "CSS", "HTML",  "Git", "Github"],
+            link: "https://github.com/JD17VM/moliplast-web"
         },
         {
-            img : "/imgs/projects/melgar.jpg", 
-            date : "2020", 
-            title : "Moliplast Web", 
-            description : "Iassn the designated area below, users are kindly requested to provide a comprehensive description of the project at hand. This description should encompass the most relevant aspects of the project.", 
-            skills : ["Skilsdl 1", "Sasdkill 2", "asdSkill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skilasdl 8"]
+            img : "/imgs/projects/dynamic_video_generator.png", 
+            date : "2024", 
+            title : "Dynamic Product Video Generator", 
+            description : "Web application that converts product information into professional marketing videos using Remotion. Features an intuitive form interface to generate dynamic product showcase videos with custom transitions and overlays.", 
+            skills : ["JavaScript", "Node.js", "React", "Remotion", "JSX"],
+            link: "https://github.com/JD17VM/dynamic-product-video-generator"
         },
         {
-            img : "/imgs/projects/melgar.jpg", 
-            date : "2020", 
-            title : "Moliplast Web", 
-            description : "Iassn the designated area below, users are kindly requested to provide a comprehensive description of the project at hand. This description should encompass the most relevant aspects of the project.", 
-            skills : ["Skilsdl 1", "Sasdkill 2", "asdSkill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skilasdl 8"]
-        },
-        {
-            img : "/imgs/projects/melgar.jpg", 
-            date : "2020", 
-            title : "Moliplast Web", 
-            description : "Iassn the designated area below, users are kindly requested to provide a comprehensive description of the project at hand. This description should encompass the most relevant aspects of the project.", 
-            skills : ["Skilsdl 1", "Sasdkill 2", "asdSkill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skilasdl 8"]
+            img : "/imgs/projects/ll_aa.png", 
+            date : "2024", 
+            title : "Launch Lab and Arrow Ascend Web", 
+            description : "This website showcases two immersive VR projects and the development process behind them, with a focus on proper interface design.", 
+            skills : ["JavaScript", "Node.js", "React", "Remotion", "JSX"],
+            link: "https://github.com/JD17VM/launchlab-vr-arrowascend-web"
         },
     ]
 }
