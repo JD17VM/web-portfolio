@@ -6,15 +6,11 @@ import { JobCard, ProjectCard } from './widgets/JobCard'; // Asegúrate que la r
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 
-// Importa los datos estáticamente
 import portfolioDataSource from './data/data.js'; // Ajusta la ruta si es necesario
 
 const Portfolio = () => {
     const [activeSection, setActiveSection] = useState('section1');
-    // Ya no necesitamos isLoading o errorLoading para los datos de idioma
-    // Ya no necesitamos pageData en el state, lo derivaremos
 
-    // Referencias a las secciones (sin cambios)
     const section1Ref = useRef(null);
     const section2Ref = useRef(null);
     const section3Ref = useRef(null);
@@ -23,28 +19,22 @@ const Portfolio = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Determina el idioma actual usando useMemo para eficiencia
     const currentLanguage = useMemo(() => {
         if (location.pathname.startsWith('/es')) return 'es';
         if (location.pathname.startsWith('/pt')) return 'pt';
         return 'en'; // Default a inglés
     }, [location.pathname]);
 
-    // Deriva los datos específicos del idioma usando useMemo (acceso directo)
     const portfolioData = useMemo(() => {
         const lang = currentLanguage;
         const fallbackLang = 'en'; // Idioma de respaldo
 
-        // --- Acceso directo con fallback ---
-
-        // Obtener objetos/valores traducidos directamente
         const titles = portfolioDataSource.title[lang] ?? portfolioDataSource.title[fallbackLang] ?? {};
         const aboutText = portfolioDataSource.about[lang] ?? portfolioDataSource.about[fallbackLang] ?? '';
         const interestsText = portfolioDataSource.interests[lang] ?? portfolioDataSource.interests[fallbackLang] ?? '';
         const languagesArray = portfolioDataSource.languages[lang] ?? portfolioDataSource.languages[fallbackLang] ?? [];
         const monthsArray = portfolioDataSource.months[lang] ?? portfolioDataSource.months[fallbackLang] ?? [];
 
-        // Función auxiliar SÓLO para formatear fechas (ya que es un poco más compleja)
         const formatEndDate = (job) => {
             if (job.endYear === 'present') {
                 switch (lang) {
@@ -53,7 +43,6 @@ const Portfolio = () => {
                     default: return 'Present';
                 }
             }
-            // Acceso directo a meses con fallback dentro de la función
             const months = portfolioDataSource.months[lang] ?? portfolioDataSource.months[fallbackLang] ?? [];
             const monthIndex = parseInt(job.endMonth, 10) - 1;
             const month = months[monthIndex] ?? job.endMonth; // Fallback al número si el mes no existe
@@ -61,7 +50,6 @@ const Portfolio = () => {
         };
 
         const formatStartDate = (job) => {
-            // Acceso directo a meses con fallback dentro de la función
             const months = portfolioDataSource.months[lang] ?? portfolioDataSource.months[fallbackLang] ?? [];
             const monthIndex = parseInt(job.startMonth, 10) - 1;
             const month = months[monthIndex] ?? job.startMonth; // Fallback al número
@@ -70,7 +58,6 @@ const Portfolio = () => {
 
 
         return {
-            // Datos comunes (igual que antes)
             name: "Juan Diego Valdivia Mendoza",
             job: portfolioDataSource.job,
             githubLink: `https://github.com/${portfolioDataSource.data.github.replace('github.com/', '')}`,
@@ -84,39 +71,29 @@ const Portfolio = () => {
             interests: interestsText,
             languages: languagesArray,
 
-            // Procesar experiencia con acceso directo dentro del map
             experience: portfolioDataSource.experience.map(exp => ({
-                // Datos comunes del item
                 startYear: exp.startYear,
                 endYear: exp.endYear,
                 skills: exp.skills,
-                // Datos formateados/traducidos
                 startDate: formatStartDate(exp),
                 endDate: formatEndDate(exp),
-                // Acceso directo a traducciones anidadas con fallback
                 roleCompany: exp.roleCompany[lang] ?? exp.roleCompany[fallbackLang] ?? '',
                 description: (exp.description[lang] ?? exp.description[fallbackLang] ?? []),
             })),
 
-            // Procesar proyectos con acceso directo dentro del map
             projects: portfolioDataSource.projects.map(proj => ({
-                // Datos comunes del item
                 img: proj.img,
                 date: proj.date,
                 skills: proj.skills,
                 link: proj.link,
-                // Acceso directo a traducciones anidadas con fallback
                 title: proj.title[lang] ?? proj.title[fallbackLang] ?? '',
                 description: proj.description[lang] ?? proj.description[fallbackLang] ?? '',
             })),
 
-            // education: portfolioDataSource.education[lang] ?? portfolioDataSource.education[fallbackLang] ?? {},
-            // courses: portfolioDataSource.courses, // No traducido
         };
     }, [currentLanguage]); // Solo recalcula cuando cambia el idioma
 
 
-    // Función Throttle (sin cambios)
     const throttle = (func, limit) => {
         let inThrottle;
         return function (...args) {
@@ -128,9 +105,7 @@ const Portfolio = () => {
         };
     };
 
-    // useEffect para el scroll (sin cambios significativos en la lógica interna)
     useEffect(() => {
-        // Añadir listeners solo si los datos y las refs existen
         if (portfolioData && section1Ref.current && section2Ref.current && section3Ref.current && section4Ref.current) {
             const handleScroll = () => {
                 const scrollPosition = window.scrollY;
@@ -159,7 +134,6 @@ const Portfolio = () => {
         // Ejecutar si cambian los datos (idioma) o las refs (aunque esto último es menos probable)
     }, [portfolioData, section1Ref, section2Ref, section3Ref, section4Ref]); // Depende de portfolioData
 
-    // Navegación por click (sin cambios)
     const handleNavClick = (e, sectionId) => {
         e.preventDefault();
         let section;
@@ -183,19 +157,14 @@ const Portfolio = () => {
         }
     };
 
-    // Cambio de idioma (sin cambios)
     const handleLanguageChange = (event) => {
         const selectedLang = event.target.value;
-        // Navega a la ruta correspondiente, lo que actualizará `currentLanguage` via useMemo
         if (selectedLang === 'es') navigate('/es');
         else if (selectedLang === 'en') navigate('/en');
         else if (selectedLang === 'pt') navigate('/pt');
     };
 
-    // --- RENDERIZADO ---
-    // Ya no se necesita el estado de carga/error para el archivo de idioma
     if (!portfolioData) {
-        // Puede mostrar un loader simple si la derivación inicial tarda (poco probable)
         return <div>Loading initial data...</div>;
     }
 
@@ -219,14 +188,12 @@ const Portfolio = () => {
                             </ul>
                         </nav>
 
-                        {/* Links Sociales */}
                         <div className={styles['social-links']}>
                             <a href={portfolioData.githubLink} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                             <a href={portfolioData.emailLink} target="_blank" rel="noopener noreferrer"><MdEmail /></a>
                             <a href={portfolioData.linkedinLink} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
                         </div>
 
-                        {/* Sección de Idiomas */}
                         <div className={styles['container-languages']}>
                             {/* Usar el título traducido */}
                             <h2>{portfolioData.title.languages.toUpperCase()}</h2>
@@ -240,7 +207,6 @@ const Portfolio = () => {
                 </div>
 
 
-                {/* Sección About e Interests */}
                 <div className={styles['container-text-title']}>
                     <div className={styles['text-title']} ref={section1Ref} id="section1">
                         <h2>{portfolioData.title.about}</h2>
@@ -255,7 +221,6 @@ const Portfolio = () => {
                     </div>
                 </div>
 
-                {/* Sección Experiencia */}
                 <div className={styles['container-experience']} ref={section3Ref} id="section3">
                     <h2>{portfolioData.title.experience.toUpperCase()}</h2>
                     <div>
@@ -272,7 +237,6 @@ const Portfolio = () => {
                     </div>
                 </div>
 
-                {/* Sección Proyectos */}
                 <div className={styles['container-projects']} ref={section4Ref} id="section4">
                     <h2>{portfolioData.title.projects}</h2>
                     <div>
@@ -289,9 +253,7 @@ const Portfolio = () => {
                         ))}
                     </div>
                 </div>
-                {/* Fin container-main-content */}
 
-                {/* Selector de Idioma (Fijo o en otra posición) */}
                 <div className={styles['language-selector']}>
                     <select
                         name="LANG"
