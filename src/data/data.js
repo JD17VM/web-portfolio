@@ -139,25 +139,28 @@ const pageData = {
             },
             description: {
                 en: [
-                    `Developed and implemented interactive, responsive user interfaces using HTML, CSS, and JavaScript, ensuring a smooth and efficient user experience.`,
-                    `Designed the user interface and user experience (UI/UX) from scratch, focusing on improving usability and overall visual appeal.`,
-                    `Developed and maintained backend functionality using PHP with the Laravel framework, handling server-side logic and database integration.`,
-                    `Designed and deployed the database, optimizing data queries.`,
+                    `Developed a complete web application using Django`,
+                    `Designed and implemented the API using Flask and SQLAlchemy, ensuring seamless communication between the frontend and backend.`,
+                    `Designed, deployed, and managed the MySQL database, optimizing data queries.`,
+                    `Created the entire user experience (UX) and user interface (UI)`,
+                    `Performed unit testing using PyTest`,
                 ],
                 es: [
-                    "Desarrollé e implementé interfaces de usuario interactivas y responsivas usando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.",
-                    "Diseñé la interfaz de usuario y la experiencia de usuario (UI/UX) desde cero, enfocándome en mejorar la usabilidad y el atractivo visual general.",
-                    "Desarrollé y mantuve la funcionalidad backend usando PHP con el framework Laravel, gestionando la lógica del lado del servidor y la integración con bases de datos.",
-                    "Diseñé e implementé la base de datos, optimizando las consultas de datos."
+                    `Desarrollé una aplicación web completa utilizando Django`,
+                    `Diseñé e implementé la API utilizando Flask y SQLAlchemy, asegurando una comunicación fluida entre el frontend y el backend.`,
+                    `Diseñé, desplegué y gestioné la base de datos MySQL, optimizando las consultas de datos.`,
+                    `Creé toda la experiencia de usuario (UX) y la interfaz de usuario (UI)`,
+                    `Realicé pruebas unitarias utilizando PyTest`,
                 ],
                 pt: [
-                    "Desenvolvi e implementei interfaces de usuário interativas e responsivas usando HTML, CSS e JavaScript, garantindo uma experiência de usuário fluida e eficiente.",
-                    "Projetei a interface do usuário e a experiência do usuário (UI/UX) do zero, focando em melhorar a usabilidade e o apelo visual geral.",
-                    "Desenvolvi e mantive a funcionalidade backend usando PHP com o framework Laravel, gerenciando a lógica do lado do servidor e a integração com bancos de dados.",
-                    "Projetei e implementei o banco de dados, otimizando as consultas de dados."
+                    `Desenvolvi uma aplicação web completa utilizando Django`,
+                    `Projetei e implementei a API utilizando Flask e SQLAlchemy, garantindo uma comunicação fluida entre o frontend e o backend.`,
+                    `Projetei, implementei e gerenciei o banco de dados MySQL, otimizando as consultas de dados.`,
+                    `Criei toda a experiência do usuário (UX) e a interface do usuário (UI)`,
+                    `Realizei testes unitários utilizando PyTest`,
                 ],
             },
-            skills: ["PHP", "Laravel", "PhpWord",  "MySQL", "Git", "Github"]
+            skills: ["JavaScript", "Python", "Flask",  "Django", "MySQl", "SQLAlchemy", "CSS", "HTML",  "Git", "Github"]
         },
     ],
 
