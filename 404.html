@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/web-portfolio/" />
+    <meta charset="utf-8">
+    <title>Redirigiendo...</title>
+    <script type="text/javascript">
+      // Guarda la ruta completa original (pathname + search + hash)
+      // sessionStorage es específico de la pestaña y se borra al cerrarla.
+      sessionStorage.redirect = window.location.href;
+
+      // Redirige al index.html raíz DENTRO del repositorio base.
+      // Obtiene el nombre del repositorio (ej: /web-portfolio) del pathname actual.
+      // Asume que es el primer segmento después del dominio.
+      var pathSegments = window.location.pathname.split('/');
+      var repoName = pathSegments[1] ? '/' + pathSegments[1] : ''; // Asegura que empiece con '/' si existe
+
+      // Redirige a la raíz del repositorio base (ej: /web-portfolio/)
+      window.location.replace(window.location.origin + repoName + '/');
+
+    </script>
   </head>
+  <body>
+    Si no eres redirigido automáticamente, por favor espera o haz clic <a href="/web-portfolio/">aquí</a>.
+    <script type="text/javascript">
+       // Actualiza el enlace de fallback por si acaso el script principal falla
+       var repoNameFromLink = window.location.pathname.split('/')[1] ? '/' + window.location.pathname.split('/')[1] : '';
+       document.querySelector('a').href = window.location.origin + repoNameFromLink + '/';
+     </script>
+  </body>
 </html>
