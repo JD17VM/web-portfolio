@@ -1,36 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Redirigiendo...</title>
-    <script type="text/javascript">
-      // Obtiene la ruta actual, incluyendo parámetros de búsqueda y hash
-      var path = window.location.pathname;
-      var query = window.location.search;
-      var hash = window.location.hash;
-
-      // Obtiene el segmento del repositorio de la URL (ej: /web-portfolio)
-      // Asume que el nombre del repo es el primer segmento después del dominio
-      var pathSegments = path.split('/');
-      var repoName = pathSegments[1] ? '/' + pathSegments[1] : ''; // Asegura que empiece con '/' si existe
-
-      // Construye la URL de redirección al index.html,
-      // pasando la ruta original como parámetro de búsqueda (o usa sessionStorage)
-      // Opción 1: Usar sessionStorage (más limpio, recomendado)
-      sessionStorage.redirect = path + query + hash;
-      window.location.replace(repoName + '/'); // Redirige a la raíz del repo
-
-      // Opción 2: Usar parámetro de búsqueda (si sessionStorage falla o no se prefiere)
-      // window.location.replace(repoName + '/?redirect=' + encodeURIComponent(path + query + hash));
-
-    </script>
+    <meta http-equiv="refresh" content="0; url=/LaunchLab/" />
   </head>
-  <body>
-    Si no eres redirigido automáticamente, <a id="redirect-link" href="/">haz clic aquí</a>.
-    <script type="text/javascript">
-      // Actualiza el enlace por si acaso el script principal falla
-      var repoNameFromLink = window.location.pathname.split('/')[1] ? '/' + window.location.pathname.split('/')[1] : '';
-      document.getElementById('redirect-link').href = repoNameFromLink + '/';
-    </script>
-  </body>
 </html>
