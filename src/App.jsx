@@ -4,7 +4,7 @@ import CV from './CV'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/web-portfolio">
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/cv" element={<CV />} />
