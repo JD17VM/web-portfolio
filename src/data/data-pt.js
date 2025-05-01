@@ -130,6 +130,22 @@ const pageData = {
             skills: ["JavaScript", "Node.js", "React", "Remotion", "JSX"], // Sem alterações
             link: "https://github.com/JD17VM/launchlab-vr-arrowascend-web" // Sem alterações
         },
+        {
+            img : "./imgs/projects/dbms_hdd.png", 
+            date : "2024", 
+            title : "Simulador de Disco Rígido para SGBD", 
+            description : "Simulação de um Sistema de Gerenciamento de Banco de Dados (SGBD) interagindo com um Disco Rígido (HDD) simulado, incluindo detalhes de baixo nível como pratos, trilhas, setores, blocos e um gerenciador de buffer.", 
+            skills : ["C","C++", "Graphviz"],
+            link: "https://github.com/JD17VM/dbms-hard-disk-simulator"
+        },
+        {
+            img : "./imgs/projects/md_to_latex.png", 
+            date : "2023", 
+            title : "Conversor de Markdown para LaTeX", 
+            description : "Este projeto fornece uma ferramenta projetada para interpretar texto escrito em sintaxe Markdown como cabeçalhos, listas, ênfase e links, então gera código fonte LaTeX bem estruturado.", 
+            skills : ["C","C++"],
+            link: "https://github.com/JD17VM/markdown-to-latex-converter"
+        },
     ],
 
     scale: {

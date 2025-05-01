@@ -24,10 +24,6 @@
             font-weight: var(--fuente_extrabold);
         }
 
-        > p{
-            margin-bottom: 0.5rem;
-        }
-
         > ul{
             display: flex;
             flex-direction: column;
@@ -45,6 +41,10 @@
     > div.cont-info{
         flex: 1 1 auto;
         row-gap: 0.5rem;
+
+        > p{
+            margin-bottom: 0.5rem;
+        }
     }
 }
 

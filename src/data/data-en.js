@@ -110,7 +110,7 @@ const pageData = {
             date : "2025", 
             title : "Moliplast Web", 
             description : "Single Page Application (SPA) developed with React.js and SCSS for a dynamic frontend experience, seamlessly integrated with a Laravel REST API backend.", 
-            skills : ["JavaScript", "Node.js", "React", "JSX", "PHP", "Laravel", "MySQL", "CSS", "HTML",  "Git", "Github"],
+            skills : ["JavaScript", "Node.js", "React", "JSX", "PHP", "Laravel", "MySQL", "CSS", "HTML"],
             link: "https://github.com/JD17VM/moliplast-web"
         },
         {
@@ -128,6 +128,22 @@ const pageData = {
             description : "This website showcases two immersive VR projects and the development process behind them, with a focus on proper interface design.", 
             skills : ["JavaScript", "Node.js", "React", "Remotion", "JSX"],
             link: "https://github.com/JD17VM/launchlab-vr-arrowascend-web"
+        },
+        {
+            img : "./imgs/projects/dbms_hdd.png", 
+            date : "2024", 
+            title : "DBMS Hard Disk Simulator", 
+            description : "Simulation of a Database Management System (DBMS) interacting with a simulated Hard Disk Drive (HDD), including low-level details like platters, tracks, sectors, blocks, and a buffer manager.", 
+            skills : ["C","C++", "Graphviz"],
+            link: "https://github.com/JD17VM/dbms-hard-disk-simulator"
+        },
+        {
+            img : "./imgs/projects/md_to_latex.png", 
+            date : "2023", 
+            title : "Markdown to Latex Converter", 
+            description : "This project provides a tool designed to interpret text written in Markdown syntax like headers, lists, emphasis and links, then it generates well-structured LaTeX source code.", 
+            skills : ["C","C++"],
+            link: "https://github.com/JD17VM/markdown-to-latex-converter"
         },
     ],
 
