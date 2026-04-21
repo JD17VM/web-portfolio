@@ -62,6 +62,36 @@ const pageData = {
 
     experience: [
         {
+            startYear: "2026",
+            startMonth: "02",
+            endYear: "present",
+            endMonth: "",
+            roleCompany: {
+                en: "Full-Stack Job & Hybrid Work Mode - Propify Peru S.A.C",
+                es: "Full-Stack y Modalidad Híbrida - Propify Peru S.A.C",
+                pt: "Full-Stack e Modalidade Híbrida - Propify Peru S.A.C",
+            },
+            description: {
+                en: [
+                      "Developed and optimized REST API endpoints, ensuring efficient and secure data transfer between the server and the client.",
+                      "Contributed to the Backend architecture using Python/Django, implementing model logic and data relationship management to ensure a scalable structure.",
+                      "Synchronized REST API service consumption with the Frontend using React and TypeScript, guaranteeing seamless data flow and real-time state management."
+                    ],
+                es: [
+                    "Desarrollé y optimicé endpoints de la API REST, garantizando una transferencia de datos eficiente y segura entre el servidor y el cliente."
+                    "Contribuí a la arquitectura del Backend en Python/Django, ejecutando la lógica de modelos y la gestión de relaciones de datos para asegurar una estructura escalable."
+                    "Sincronicé el consumo de servicios de la API REST con el Frontend mediante React y TypeScript, garantizando el flujo de datos y la gestión de estados en tiempo real."
+                ],
+                pt: [
+                      "Desenvolvi e otimizei endpoints de API REST, garantindo uma transferência de dados eficiente e segura entre o servidor e o cliente.",
+                      "Contribuí para a arquitetura do Backend em Python/Django, executando a lógica de modelos e a gestão de relacionamentos de dados para garantir uma estrutura escalável.",
+                      "Sincronizei o consumo de serviços da API REST com o Frontend utilizando React e TypeScript, garantindo o fluxo de dados e a gestão de estados em tempo real."
+                    ],
+            },
+            skills: ["JavaScript", "Node.js", "React", "TypeScript", "JSX", "Python", "Django", "SQL Server", "Docker", "Microsoft Azure" , "CSS", "Git", "Github"]
+        },
+        
+        {
             startYear: "2023",
             startMonth: "02",
             endYear: "present",
@@ -125,42 +155,6 @@ const pageData = {
                 ],
             },
             skills: ["PHP", "Laravel", "PhpWord",  "MySQL", "Git", "Github"]
-        },
-
-        {
-            startYear: "2024",
-            startMonth: "08",
-            endYear: "2024",
-            endMonth: "10",
-            roleCompany: {
-                en: "Full-Stack Job & Remote Work - Operaciones Topográficas y Agrimensuras (OTyM)",
-                es: "Full-Stack y Trabajo Remoto - Operaciones Topográficas y Agrimensuras (OTyM)",
-                pt: "Full-Stack e Trabalho Remoto - Operaciones Topográficas y Agrimensuras (OTyM)",
-            },
-            description: {
-                en: [
-                    `Developed a complete web application using Django`,
-                    `Designed and implemented the API using Flask and SQLAlchemy, ensuring seamless communication between the frontend and backend.`,
-                    `Designed, deployed, and managed the MySQL database, optimizing data queries.`,
-                    `Created the entire user experience (UX) and user interface (UI)`,
-                    `Performed unit testing using PyTest`,
-                ],
-                es: [
-                    `Desarrollé una aplicación web completa utilizando Django`,
-                    `Diseñé e implementé la API utilizando Flask y SQLAlchemy, asegurando una comunicación fluida entre el frontend y el backend.`,
-                    `Diseñé, desplegué y gestioné la base de datos MySQL, optimizando las consultas de datos.`,
-                    `Creé toda la experiencia de usuario (UX) y la interfaz de usuario (UI)`,
-                    `Realicé pruebas unitarias utilizando PyTest`,
-                ],
-                pt: [
-                    `Desenvolvi uma aplicação web completa utilizando Django`,
-                    `Projetei e implementei a API utilizando Flask e SQLAlchemy, garantindo uma comunicação fluida entre o frontend e o backend.`,
-                    `Projetei, implementei e gerenciei o banco de dados MySQL, otimizando as consultas de dados.`,
-                    `Criei toda a experiência do usuário (UX) e a interface do usuário (UI)`,
-                    `Realizei testes unitários utilizando PyTest`,
-                ],
-            },
-            skills: ["JavaScript", "Python", "Flask",  "Django", "MySQl", "SQLAlchemy", "CSS", "HTML",  "Git", "Github"]
         },
     ],
 
