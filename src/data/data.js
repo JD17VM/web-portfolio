@@ -67,35 +67,74 @@ const pageData = {
             endYear: "present",
             endMonth: "",
             roleCompany: {
-                en: "Full-Stack Job & Hybrid Work Mode - Propify Peru S.A.C",
-                es: "Full-Stack y Modalidad Híbrida - Propify Peru S.A.C",
-                pt: "Full-Stack e Modalidade Híbrida - Propify Peru S.A.C",
+                en: "Full-Stack Job & On-site Work Mode - Propify Peru S.A.C",
+                es: "Full-Stack y Modalidad Presencial - Propify Peru S.A.C",
+                pt: "Full-Stack e Modalidade Presencial - Propify Peru S.A.C",
             },
             description: {
                 en: [
                       "Developed and optimized REST API endpoints, ensuring efficient and secure data transfer between the server and the client.",
                       "Contributed to the Backend architecture using Python/Django, implementing model logic and data relationship management to ensure a scalable structure.",
-                      "Synchronized REST API service consumption with the Frontend using React and TypeScript, guaranteeing seamless data flow and real-time state management."
+                      "Synchronized REST API service consumption with the Frontend using React and TypeScript, guaranteeing seamless data flow and real-time state management.",
+                      "Participated in the development of the mobile application with React Native and Expo, integrating push notifications with Firebase, maps and social login."
                     ],
                 es: [
-                    "Desarrollé y optimicé endpoints de la API REST, garantizando una transferencia de datos eficiente y segura entre el servidor y el cliente."
-                    "Contribuí a la arquitectura del Backend en Python/Django, ejecutando la lógica de modelos y la gestión de relaciones de datos para asegurar una estructura escalable."
-                    "Sincronicé el consumo de servicios de la API REST con el Frontend mediante React y TypeScript, garantizando el flujo de datos y la gestión de estados en tiempo real."
+                    "Desarrollé y optimicé endpoints de la API REST, garantizando una transferencia de datos eficiente y segura entre el servidor y el cliente.",
+                    "Contribuí a la arquitectura del Backend en Python/Django, ejecutando la lógica de modelos y la gestión de relaciones de datos para asegurar una estructura escalable.",
+                    "Sincronicé el consumo de servicios de la API REST con el Frontend mediante React y TypeScript, garantizando el flujo de datos y la gestión de estados en tiempo real.",
+                    "Participé en el desarrollo de la aplicación móvil con React Native y Expo, integrando notificaciones push con Firebase, mapas e inicio de sesión con redes sociales.",
                 ],
                 pt: [
                       "Desenvolvi e otimizei endpoints de API REST, garantindo uma transferência de dados eficiente e segura entre o servidor e o cliente.",
                       "Contribuí para a arquitetura do Backend em Python/Django, executando a lógica de modelos e a gestão de relacionamentos de dados para garantir uma estrutura escalável.",
-                      "Sincronizei o consumo de serviços da API REST com o Frontend utilizando React e TypeScript, garantindo o fluxo de dados e a gestão de estados em tempo real."
+                      "Sincronizei o consumo de serviços da API REST com o Frontend utilizando React e TypeScript, garantindo o fluxo de dados e a gestão de estados em tempo real.",
+                      "Participei do desenvolvimento do aplicativo móvel com React Native e Expo, integrando notificações push com Firebase, mapas e login social."
                     ],
             },
-            skills: ["JavaScript", "Node.js", "React", "TypeScript", "JSX", "Python", "Django", "SQL Server", "Docker", "Microsoft Azure" , "CSS", "Git", "Github"]
+            skills: ["JavaScript", "TypeScript", "React", "React Native", "Expo", "JSX", "Node.js", "Python", "Django", "SQL Server", "Firebase", "Tailwind CSS", "Docker", "Microsoft Azure", "CSS", "Git", "Github"]
         },
         
         {
-            startYear: "2023",
-            startMonth: "02",
-            endYear: "present",
-            endMonth: "",
+            startYear: "2024",
+            startMonth: "08",
+            endYear: "2024",
+            endMonth: "10",
+            roleCompany: {
+                en: "Full-Stack Job & Remote Work - Operaciones Topográficas y Agrimensuras (OTyM)",
+                es: "Full-Stack y Trabajo Remoto - Operaciones Topográficas y Agrimensuras (OTyM)",
+                pt: "Full-Stack e Trabalho Remoto - Operaciones Topográficas y Agrimensuras (OTyM)",
+            },
+            description: {
+                en: [
+                    `Developed a complete web application using Django`,
+                    `Designed and implemented the API using Flask and SQLAlchemy, ensuring seamless communication between the frontend and backend.`,
+                    `Designed, deployed, and managed the MySQL database, optimizing data queries.`,
+                    `Created the entire user experience (UX) and user interface (UI)`,
+                    `Performed unit testing using PyTest`,
+                ],
+                es: [
+                    `Desarrollé una aplicación web completa utilizando Django`,
+                    `Diseñé e implementé la API utilizando Flask y SQLAlchemy, asegurando una comunicación fluida entre el frontend y el backend.`,
+                    `Diseñé, desplegué y gestioné la base de datos MySQL, optimizando las consultas de datos.`,
+                    `Creé toda la experiencia de usuario (UX) y la interfaz de usuario (UI)`,
+                    `Realicé pruebas unitarias utilizando PyTest`,
+                ],
+                pt: [
+                    `Desenvolvi uma aplicação web completa utilizando Django`,
+                    `Projetei e implementei a API utilizando Flask e SQLAlchemy, garantindo uma comunicação fluida entre o frontend e o backend.`,
+                    `Projetei, implementei e gerenciei o banco de dados MySQL, otimizando as consultas de dados.`,
+                    `Criei toda a experiência do usuário (UX) e a interface do usuário (UI)`,
+                    `Realizei testes unitários utilizando PyTest`,
+                ],
+            },
+            skills: ["JavaScript", "Python", "Flask",  "Django", "MySQl", "SQLAlchemy", "CSS", "HTML",  "Git", "Github"]
+        },
+
+        {
+            startYear: "2022",
+            startMonth: "10",
+            endYear: "2025",
+            endMonth: "12",
             roleCompany: {
                 en: "Full-Stack Job & Hybrid Work Mode - JPAWAJ SAC",
                 es: "Full-Stack y Modalidad Híbrida - JPAWAJ SAC",
@@ -122,39 +161,6 @@ const pageData = {
                 ],
             },
             skills: ["JavaScript", "Node.js", "React", "JSX", "PHP", "Laravel", "MySQL", "Docker", "CSS", "HTML",  "Git", "Github"]
-        },
-
-        {
-            startYear: "2021",
-            startMonth: "02",
-            endYear: "2023",
-            endMonth: "04",
-            roleCompany: {
-                en: "Back-End Developer & Hybrid Work Mode - JPAWAJ SAC",
-                es: "Desarrollador Back-End y Modalidad Híbrida - JPAWAJ SAC",
-                pt: "Desenvolvedor Back-End e Modalidade Híbrida - JPAWAJ SAC",
-            },
-            description: {
-                en: [
-                    `Developed and implemented interactive, responsive user interfaces using HTML, CSS, and JavaScript, ensuring a smooth and efficient user experience.`,
-                    `Designed the user interface and user experience (UI/UX) from scratch, focusing on improving usability and overall visual appeal.`,
-                    `Developed and maintained backend functionality using PHP with the Laravel framework, handling server-side logic and database integration.`,
-                    `Designed and deployed the database, optimizing data queries.`,
-                ],
-                es: [
-                    "Desarrollé e implementé interfaces de usuario interactivas y responsivas usando HTML, CSS y JavaScript, asegurando una experiencia de usuario fluida y eficiente.",
-                    "Diseñé la interfaz de usuario y la experiencia de usuario (UI/UX) desde cero, enfocándome en mejorar la usabilidad y el atractivo visual general.",
-                    "Desarrollé y mantuve la funcionalidad backend usando PHP con el framework Laravel, gestionando la lógica del lado del servidor y la integración con bases de datos.",
-                    "Diseñé e implementé la base de datos, optimizando las consultas de datos."
-               ],
-               pt: [
-                    "Desenvolvi e implementei interfaces de usuário interativas e responsivas usando HTML, CSS e JavaScript, garantindo uma experiência de usuário fluida e eficiente.",
-                    "Projetei a interface do usuário e a experiência do usuário (UI/UX) do zero, focando em melhorar a usabilidade e o apelo visual geral.",
-                    "Desenvolvi e mantive a funcionalidade backend usando PHP com o framework Laravel, gerenciando a lógica do lado do servidor e a integração com bancos de dados.",
-                    "Projetei e implementei o banco de dados, otimizando as consultas de dados."
-                ],
-            },
-            skills: ["PHP", "Laravel", "PhpWord",  "MySQL", "Git", "Github"]
         },
     ],
 
