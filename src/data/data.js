@@ -24,7 +24,13 @@ const pageData = {
             courses: "Courses",
             languages: "Languages",
             tools: "Tools",
-            projects: "PROJECTS"
+            projects: "PROJECTS",
+            to: "to",
+            screenshots: "Screenshots",
+            visitSite: "Visit site",
+            viewCode: "View code",
+            privateCode: "Private code",
+            close: "Close",
         },
         es: {
             about: "ACERCA DE MÍ",
@@ -34,7 +40,13 @@ const pageData = {
             courses: "Cursos",
             languages: "Idiomas",
             tools: "Herramientas",
-            projects: "PROYECTOS"
+            projects: "PROYECTOS",
+            to: "a",
+            screenshots: "Capturas",
+            visitSite: "Visitar sitio",
+            viewCode: "Ver código",
+            privateCode: "Código privado",
+            close: "Cerrar",
         },
         pt: {
             about: "SOBRE MIM",
@@ -44,7 +56,13 @@ const pageData = {
             courses: "Cursos",
             languages: "Idiomas",
             tools: "Ferramentas",
-            projects: "PROJETOS" 
+            projects: "PROJETOS",
+            to: "a",
+            screenshots: "Capturas",
+            visitSite: "Visitar site",
+            viewCode: "Ver código",
+            privateCode: "Código privado",
+            close: "Fechar",
         },
     },
 
@@ -127,7 +145,7 @@ const pageData = {
                     `Realizei testes unitários utilizando PyTest`,
                 ],
             },
-            skills: ["JavaScript", "Python", "Flask",  "Django", "MySQl", "SQLAlchemy", "CSS", "HTML",  "Git", "Github"]
+            skills: ["JavaScript", "Python", "Flask",  "Django", "MySQL", "SQLAlchemy", "CSS", "HTML",  "Git", "Github"]
         },
 
         {
@@ -168,17 +186,17 @@ const pageData = {
         en: {
             career: "Computer Science",
             university: "San Agustin National University Arequipa",
-            year: "fifth year",
+            year: "",
         },
         es: {
-            career: "Ciencia de la Computación",
+            career: "Ciencias de la Computación",
             university: "Universidad Nacional de San Agustín de Arequipa",
-            year: "quinto año",
+            year: "",
         },
         pt: {
             career: "Ciência da Computação",
             university: "Universidad Nacional de San Agustín de Arequipa",
-            year: "quinto ano",
+            year: "",
         },
     },
 
@@ -240,6 +258,62 @@ const pageData = {
     },
 
     projects : [
+        {
+            img : "./imgs/projects/propify_web/cover.png",
+            date : "2026",
+            title : {
+                en: "Propify - Real Estate Web Platform",
+                es: "Propify - Plataforma Web Inmobiliaria",
+                pt: "Propify - Plataforma Web Imobiliária",
+            },
+            description : {
+                en: "Web platform for real estate agents with properties, customers, CRM pipeline, chats, calendar, notifications, referrals, reports and gamification. React and TypeScript frontend consuming a Django REST API deployed on Microsoft Azure.",
+                es: "Plataforma web para agentes inmobiliarios con propiedades, clientes, pipeline de CRM, chats, calendario, notificaciones, referidos, reportes y gamificación. Frontend en React y TypeScript que consume una API REST en Django desplegada en Microsoft Azure.",
+                pt: "Plataforma web para corretores de imóveis com imóveis, clientes, pipeline de CRM, chats, calendário, notificações, indicações, relatórios e gamificação. Frontend em React e TypeScript consumindo uma API REST em Django implantada no Microsoft Azure.",
+            },
+            skills : ["TypeScript", "React", "Tailwind CSS", "Python", "Django", "SQL Server", "Docker", "Microsoft Azure", "Git", "Github"],
+            link: "",
+            liveLink: "https://propify.pe",
+            gallery: [],
+        },
+        {
+            img : "./imgs/projects/propify_mobile/cover.png",
+            date : "2026",
+            title : {
+                en: "Propify - Mobile App",
+                es: "Propify - Aplicación Móvil",
+                pt: "Propify - Aplicativo Móvel",
+            },
+            description : {
+                en: "Mobile app for Propify real estate agents built with React Native and Expo, with push notifications through Firebase, property maps, Google and Apple sign-in, and the same Django REST API as the web platform.",
+                es: "Aplicación móvil para los agentes inmobiliarios de Propify construida con React Native y Expo, con notificaciones push mediante Firebase, mapas de propiedades, inicio de sesión con Google y Apple, y la misma API REST en Django de la plataforma web.",
+                pt: "Aplicativo móvel para os corretores da Propify construído com React Native e Expo, com notificações push via Firebase, mapas de imóveis, login com Google e Apple, e a mesma API REST em Django da plataforma web.",
+            },
+            skills : ["TypeScript", "React Native", "Expo", "Firebase", "Mapbox", "Git", "Github"],
+            link: "",
+            liveLink: "",
+            gallery: [],
+            visible: false,
+        },
+        {
+            img : "./imgs/projects/autonoma_crm.png",
+            date : "2026",
+            title : {
+                en: "Autonoma CRM",
+                es: "CRM Autonoma",
+                pt: "CRM Autonoma",
+            },
+            description : {
+                en: "Professional, generic CRM with cross-cutting AI and WhatsApp integrated through Chatwoot. Monorepo with a Django backend, a Next.js frontend, its own design system with Storybook and Docker-based infrastructure.",
+                es: "CRM profesional y genérico con IA transversal y WhatsApp integrado mediante Chatwoot. Monorepo con backend en Django, frontend en Next.js, sistema de diseño propio con Storybook e infraestructura basada en Docker.",
+                pt: "CRM profissional e genérico com IA transversal e WhatsApp integrado via Chatwoot. Monorepo com backend em Django, frontend em Next.js, design system próprio com Storybook e infraestrutura baseada em Docker.",
+            },
+            skills : ["Python", "Django", "TypeScript", "React", "Docker", "CSS", "Git", "Github"],
+            link: "",
+            liveLink: "",
+            gallery: [],
+            visible: false,
+        },
         {
             img : "./imgs/projects/moliplast_web.png", 
             date : "2025", 

@@ -53,7 +53,7 @@ const MetaHeader = ({ children, aside_upper, aside_lower }) => {
 }
 
 // Modificado para aceptar startDate, endDate y manejar 'Present'
-const ExperienceItem = ({ title, description, startDate, endDate, country, skills, toolsLabel }) => {
+const ExperienceItem = ({ title, description, startDate, endDate, country, skills, toolsLabel, toLabel = 'to' }) => {
     if (!description) return null;
 
     // Determinar texto para el aside superior (rango de fechas)
@@ -61,7 +61,7 @@ const ExperienceItem = ({ title, description, startDate, endDate, country, skill
 
     return (
         <div className='right-col__experience-item'>
-            <MetaHeader aside_upper={<><p>{startDate}</p><p> to {endDate}</p></>} aside_lower={country}>
+            <MetaHeader aside_upper={<><p>{startDate}</p><p> {toLabel} {endDate}</p></>} aside_lower={country}>
                 <h3>{title}</h3>
             </MetaHeader>
             <div className="right-col__experience-description">
@@ -231,6 +231,7 @@ const CV = () => {
                                     country={pageData.data?.country} // Dato común
                                     skills={job.skills}             // Dato común
                                     toolsLabel={pageData.title.tools || 'Tools'} // Etiqueta traducida con fallback
+                                    toLabel={pageData.title.to || 'to'}
                                 />
                             ))}
                         </div>

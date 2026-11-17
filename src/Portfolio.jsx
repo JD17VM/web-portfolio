@@ -81,11 +81,16 @@ const Portfolio = () => {
                 description: (exp.description[lang] ?? exp.description[fallbackLang] ?? []),
             })),
 
-            projects: portfolioDataSource.projects.map(proj => ({
+            projects: portfolioDataSource.projects.filter(proj => proj.visible !== false).map(proj => ({
                 img: proj.img,
                 date: proj.date,
                 skills: proj.skills,
                 link: proj.link,
+                liveLink: proj.liveLink ?? '',
+                gallery: (proj.gallery ?? []).map(item => ({
+                    src: item.src,
+                    caption: item.caption?.[lang] ?? item.caption?.[fallbackLang] ?? '',
+                })),
                 title: proj.title[lang] ?? proj.title[fallbackLang] ?? '',
                 description: proj.description[lang] ?? proj.description[fallbackLang] ?? '',
             })),
@@ -249,6 +254,9 @@ const Portfolio = () => {
                                 description={project.description} // Usar descripción traducida
                                 skills={project.skills}       // Dato común
                                 link={project.link}           // Dato común
+                                liveLink={project.liveLink}
+                                gallery={project.gallery}
+                                labels={portfolioData.title}
                             />
                         ))}
                     </div>
